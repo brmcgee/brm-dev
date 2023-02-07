@@ -1,6 +1,42 @@
 /* created by brian @ brm.dev - use with boostrap5  */
 /* color code below will change colors throughout  */
+.banner{
+    background-color: #333;
+}
 
+.main {
+    margin: 25px auto 25px auto;
+    padding: 10px 8px 10px 8px;
+    border-radius: 25px;
+    background-color: #fdfdfd;
+    border: 1px solid rgb(13, 66, 211);
+    box-shadow: 4px 8px 20px 1px rgb(8, 8, 8);
+}
+
+.sidebar {
+    margin: 25px auto 25px auto;
+    padding: 10px 8px 10px 8px;
+    border-radius: 25px;
+    background-color: #636161;
+    border: 1px solid rgb(31, 29, 29);
+    box-shadow: 4px 8px 20px 1px rgb(39, 38, 38);
+}
+.ad {
+    margin: 25px auto 25px auto;
+    padding: 10px 8px 10px 8px;
+    border-radius: 25px;
+    background-color: #fdfdfd;
+    border: 8px dashed rgb(37, 168, 20);
+    box-shadow: 4px 8px 20px 1px rgb(8, 8, 8);
+}
+.topbar {
+    height: 100vh;
+    margin: 0px auto 25px auto;
+    padding: 10px 8px 10px 8px;
+    background-color: #333;
+    border: 2px solid rgb(20, 67, 168);
+    box-shadow: 4px 8px 20px 1px rgb(8, 8, 8);
+}
 html, body {
     /* prevent mobile scroll x  */
     overflow-x: hidden;
@@ -9,50 +45,21 @@ html, body {
 body {
     /* prevent mobile scroll x  */
     position: relative;
-    background-color: rgb(235, 233, 233);
-}
-
-.main,
-.ad, 
-.sidebar,
-.services {
-    background-color: #fdfdfd;
-    /* border: .05px solid rgb(156, 156, 156); */
-    box-shadow: 8px 8px 30px  rgb(175, 175, 175);
-    margin-left: 5px;
-    margin-right: 5px;
-
-}
-.ad {
-    background-color: rgb(230, 230, 230);
-    border: 5px dashed #333;
-    margin: 5px auto 5px auto;
-}
-.sidebar {
-    background-color: var(--bg-icon-hover);
-    border: 1px solid rgb(110, 110, 110);
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom: 40px solid #333;
-    border-top: 80px solid #333;
-    margin: 5px auto 5px auto;
-}
-.banner{
-    background-color: #8a8383;
+    background-color: #333;
 }
 
 
 :root{
     /* primary color and shades  */
     /* set for styles below - changes global  */
-    --bg-primary: rgb(60, 177, 31);
+    --bg-primary: rgb(25, 57, 160);
     --bg-primary-off: rgb(33, 139, 19);
     --bg-primary-dark: rgb(51, 156, 25);
     --bg-primary-contrast: rgb(255, 255, 255); 
     --bg-primary-link: rgb(15, 15, 15);
     --text-white: rgb(240, 240, 240);
     --text-black: rgb(0, 0, 0);
-    --bg-icon: rgb(6, 37, 216);
+    --bg-icon: rgb(224, 138, 26);
     --bg-icon-hover: rgb(235, 111, 11);
     --font-primary: ''Montserrat', sans-serif';
     --font-secondary: "Roboto", Sans-serif;
@@ -70,7 +77,7 @@ body {
   
     /* CONTAINER HEIGHT ADJUSTMENTS */
     --banner-bar-height: 33px;
-    --banner-height: 250px;
+    --banner-height: auto;
     --nav-height: 80px;
     --wrapper-height: auto;
     --footer-bar-height: 50px;
