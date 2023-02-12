@@ -7,27 +7,28 @@
 .main {
     margin: 25px auto 25px auto;
     padding: 10px 8px 10px 8px;
-    border-radius: 25px;
+    border-radius: 2px;
     background-color: #fdfdfd;
-    border: 1px solid rgb(13, 66, 211);
+    border: 1px solid rgb(45, 45, 45);
     box-shadow: 4px 8px 20px 1px rgb(8, 8, 8);
 }
 
 .sidebar {
     margin: 25px auto 25px auto;
     padding: 10px 8px 10px 8px;
-    border-radius: 25px;
-    background-color: #636161;
+    border-radius: 2px;
+    background-color: #d2d2d2;
     border: 1px solid rgb(31, 29, 29);
     box-shadow: 4px 8px 20px 1px rgb(39, 38, 38);
 }
 .ad {
     margin: 25px auto 25px auto;
     padding: 10px 8px 10px 8px;
-    border-radius: 25px;
+    border-radius: 2px;
     background-color: #fdfdfd;
-    border: 8px dashed rgb(37, 168, 20);
+    border: 1px dashed rgb(37, 168, 20);
     box-shadow: 4px 8px 20px 1px rgb(8, 8, 8);
+    height: 25vh;
 }
 .topbar {
     height: 100vh;
@@ -45,7 +46,7 @@ html, body {
 body {
     /* prevent mobile scroll x  */
     position: relative;
-    background-color: #333;
+    background-color: #ffffff;
 }
 
 
