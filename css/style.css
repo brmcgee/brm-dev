@@ -53,8 +53,8 @@ body {
     /* primary color and shades  */
     /* set for styles below - changes global  */
     --bg-primary: rgb(25, 57, 160);
-    --bg-primary-off: rgb(33, 139, 19);
-    --bg-primary-dark: rgb(51, 156, 25);
+    --bg-primary-off: rgb(19, 33, 139);
+    --bg-primary-dark: rgb(21, 48, 130);
     --bg-primary-contrast: rgb(255, 255, 255); 
     --bg-primary-link: rgb(15, 15, 15);
     --text-white: rgb(240, 240, 240);
