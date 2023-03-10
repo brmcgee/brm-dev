@@ -54,6 +54,7 @@ async function renderBlogs() {
 }
 renderBlogs();
 
+
 function renderLength(){
     let blogs = document.querySelectorAll(".blog-card");
     window.alert(blogs.length);
