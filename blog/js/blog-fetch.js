@@ -1,7 +1,6 @@
-let url = "https://www.brmcontractors.net/assets/data/brm.json";
-async function getBlogs() {
-    // let url = 'https://brmdev.com/blog/random-data.json';
+// let url = "https://www.brmcontractors.net/assets/data/brm.json";
 
+async function getBlogs() {
     try {
         let res = await fetch(url);
         return await res.json();
@@ -10,16 +9,7 @@ async function getBlogs() {
     }
 }
 
-let selectUser = "Heather McGee";
-let selectCategory = "Bathroom Remodel";
 
-let category;
- function renderCat () {
-  category = document.getElementById("catData").value;
- } 
-
-
- 
 async function renderBlogs() {
     let blogs = await getBlogs();
     let html = '';
@@ -30,18 +20,21 @@ async function renderBlogs() {
     
         let htmlSegment = `
 
-        <div class="blog-card" style="border:1px solid #333; max-width:800px;">
+        <div class="blog-card">
           <div class="blog" style="padding:12px;">
             <div class="top">
               <h1>${blog.category}</h1>
-              <h2 style="color:blue">${document.getElementById("catData").value}</h2>
-              <img src="${blog.img2}" style="width:300px;margin-bottom:2px;" >
-              <img src="${blog.img1}" style="width:300px" >
+ <h5 style="color:blue">category selection --> ${document.getElementById("catData").value}</h5>
+ <h5 style="color:red">author selection --> ${document.getElementById("authorData").value}</h5>
+              <img src="${blog.img2}">
+              <img src="${blog.img1}">
             </div>
             <div class="user">
               <img src="${blog.avatar}" style="height:75px;width:75px;border-radius:50px;">
-              <p>${blog.author}</p>
-              <p>${blog.date}</p>
+              <div class="user-content">
+                <p>${blog.author}</p>
+                <p>${blog.date}</p>
+              </div>
             </div>
             <div class="content">
               <h2>${blog.title}</h2>
@@ -49,26 +42,24 @@ async function renderBlogs() {
               <p>Category -- ${blog.project}</p>
             </div>
           </div>
-        </div>       
-        `;
+        </div>       `;
 
-        // if (blog.author === selectUser) {
-        //     html += htmlSegment;
-        // }
-        // if (blog.category === selectCategory) {
-        //     html += htmlSegment;
-        // }
-        let cat = document.getElementById("catData").value;
+        
+
+        //filter categories
         let filter = blog.project.toLowerCase();
-        if (filter === cat){
-          html += htmlSegment;
-        }
-        if (cat === "all") {
-          html += htmlSegment;
-
-        }
+        let cat = document.getElementById("catData").value;
+        if (filter === cat) { html += htmlSegment; }
+        // if (cat === "all") { html += htmlSegment; }
   
-        // html += htmlSegment;
+        // filter card type 
+        let author = document.getElementById("authorData").value;
+        let aFiltered = blog.author;
+        if (aFiltered === author) { html += htmlSegment;}
+
+        if (author === "all" && cat === "all") {
+          html += htmlSegment;
+        }
     });
 
     let container = document.querySelector('.container');
