@@ -13,18 +13,28 @@ async function getBlogs() {
 let selectUser = "Heather McGee";
 let selectCategory = "Bathroom Remodel";
 
+let category;
+ function renderCat () {
+  category = document.getElementById("catData").value;
+ } 
 
+
+ 
 async function renderBlogs() {
     let blogs = await getBlogs();
     let html = '';
-    blogs.forEach(blog => {
+   
 
+
+    blogs.forEach(blog => {
+    
         let htmlSegment = `
 
         <div class="blog-card" style="border:1px solid #333; max-width:800px;">
           <div class="blog" style="padding:12px;">
             <div class="top">
               <h1>${blog.category}</h1>
+              <h2 style="color:blue">${document.getElementById("catData").value}</h2>
               <img src="${blog.img2}" style="width:300px;margin-bottom:2px;" >
               <img src="${blog.img1}" style="width:300px" >
             </div>
@@ -48,9 +58,17 @@ async function renderBlogs() {
         // if (blog.category === selectCategory) {
         //     html += htmlSegment;
         // }
+        let cat = document.getElementById("catData").value;
+        let filter = blog.project.toLowerCase();
+        if (filter === cat){
+          html += htmlSegment;
+        }
+        if (cat === "all") {
+          html += htmlSegment;
 
-        html += htmlSegment;
-       
+        }
+  
+        // html += htmlSegment;
     });
 
     let container = document.querySelector('.container');
