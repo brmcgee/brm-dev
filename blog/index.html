@@ -7,10 +7,22 @@
     <title>Fetch BRM data</title>
 </head>
 <body>
+
+  <div class="url-source">
+      <label for="urlData">Choose data:</label>
+      <select id="urlData" name="urlData">
+        <option value="https://www.brmcontractors.net/assets/data/brm.json">BRM</option>
+        <option value="https://brmdev.com/blog/random-data.json">Aux</option>
+      </select>
+      <button role="button" id="renderUrl" onclick="renderUrl()">Submit</button>
+  </div>
+
+
+
+
     <button onclick="renderLength()">Length</button>
     <h3>BRM Blog Data Welcome</h3>
     <div class="container"></div>
-
 
     <script src="js/blog-fetch.js"></script>
 </body>
