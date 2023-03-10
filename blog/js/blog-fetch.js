@@ -43,9 +43,11 @@ async function renderBlogs() {
         // if (blog.author === selectUser) {
         //     html += htmlSegment;
         // }
-        if (blog.category === selectCategory) {
-            html += htmlSegment;
-        }
+        // if (blog.category === selectCategory) {
+        //     html += htmlSegment;
+        // }
+
+        html += htmlSegment;
        
     });
 
