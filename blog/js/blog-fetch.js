@@ -1,5 +1,7 @@
+let url = "https://www.brmcontractors.net/assets/data/brm.json";
 async function getBlogs() {
-    let url = 'https://www.brmcontractors.net/assets/data/brm.json';
+    // let url = 'https://brmdev.com/blog/random-data.json';
+
     try {
         let res = await fetch(url);
         return await res.json();
@@ -54,7 +56,12 @@ async function renderBlogs() {
     let container = document.querySelector('.container');
     container.innerHTML = html;
 }
-renderBlogs();
+// renderBlogs();
+
+function renderUrl () {
+  url = document.getElementById("urlData").value;
+  renderBlogs();
+}
 
 
 function renderLength(){
