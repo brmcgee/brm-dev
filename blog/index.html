@@ -607,7 +607,7 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
 }
 .card-res .card-image{
   width:400px;
-  height:250px;
+  height:295px;
 }
 .card-res .card-image>img{
   width:100%;
@@ -640,24 +640,32 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
   font-size:1rem;
 }
 .card-res .card-price{
-    width: 390px;
-    height: 275px;
-
+  width:180px;
+  height:180px;
+  border-radius: 50%;
   color:#fff;
   margin-left:auto;
   font-size:2rem;
   display:flex;
-  justify-content:center;
+  justify-content:flex-start;
   align-items:center;
 }
 .card-res .card-price img {
-    width: 390px;
-    height: 275px;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
 }
 
 </style>
 </head>
 <body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        renderUrl();
+        renderUrl("all")
+    })
+   </script>
+
     <div class="col-lg-6  mx-auto d-block p-3">
         <div class="btn-group ms-3">
             <button class="btn btn-danger btn-main" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Menu</button>
@@ -737,12 +745,7 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
       <div id="blogs" class="blog-cards row flip-container"></div>
     </div>
 
-   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        renderUrl();
-        renderUrl("all");
-    })
-   </script>
+   
 
 
   <script src="js/flip.js"></script>
