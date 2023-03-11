@@ -23,7 +23,7 @@
     }
 
     .blog-cards .blog-card .blog {
-        background-color: #ffffff;
+        /* background-color: #ffffff; */
         border: 1px solid #333;
         border-radius: 20px;
         padding: 0;
@@ -32,6 +32,11 @@
     .blog-card .blog .top .head-top {
         background-color: #333;
         color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        justify-self: flex-start;
     }
     .head-top h1 {
         margin: 4px auto 4px 20px;
@@ -39,7 +44,7 @@
     }
     .blog-card .blog .top img {
         width: 49%;
-        height: 50vw;
+        height: 36vw;
         margin: auto;
     }
     .blog-head {
@@ -136,6 +141,8 @@
       </select>
     </div>
     <button onclick="renderLength()" class="btn-main">Length</button>
+    <button onclick="renderUrl(), blog(39)" class="btn-main">#39</button>
+    <button onclick="renderUrl(), blog(7)" class="btn-main">#7</button>
  </div>
 </div>
   
