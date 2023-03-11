@@ -32,19 +32,22 @@
     .blog-card .blog .top .head-top {
         background-color: #333;
         color: white;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        justify-self: flex-start;
+        display: grid;
+        grid-template-columns: 1fr 7fr;
     }
     .head-top h1 {
         margin: 4px auto 4px 20px;
+        padding-top: 15px;
+        font-size: 36px;
         text-transform: uppercase;
     }
-    .blog-card .blog .top img {
+    .top .head-top img {
+        padding: 8px;
+    }
+    .blog-card .blog .top .img-top img {
         width: 49%;
-        height: 36vw;
+        max-height: 500px;
+        height: 300px;
         margin: auto;
     }
     .blog-head {
@@ -74,6 +77,9 @@
         padding-left: 25px;
         padding-right: 20px;
     }
+    .button-group {
+        padding: 5px;
+    }
     select {
         height: 30px;
         width: 200px;
@@ -95,13 +101,18 @@
         padding: 4px 18px 4px 18px;
         font-size: 16px;
     }
+    .btn-black {
+        background-color: #333;
+        border: 2px solid #202020;
+    }
+
 </style>
 </head>
 <body>
 
-<div class="wrapper">
+  <div class="wrapper">
  <div class="blog-head">
-    <h2>BRM Blog Data Welcome</h2>
+    <h2>BRM Blog Data Welcome <span id="totalQ">s</span></h2>
  </div>
  <div class="blog-controls">
     <div class="url-source">
@@ -112,7 +123,7 @@
         </select>
     </div>
   
-    <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main">Submit</button>
+    
     
 
     <div class="category-source">
@@ -129,6 +140,7 @@
         <option value="bathroom-remodel-rm">Bathroom Project</option>
         <option value="bathroom">Bathroom</option>
         <option value="siding-roofing">Siding and Roofing</option>
+        <option value="clothing">clothing</option>
       </select>
     </div>
     <br>
@@ -138,25 +150,25 @@
         <option value="all">All</option>
         <option value="Brian McGee">Brian McGee</option>
         <option value="Heather McGee">Heather McGee</option>
+        <option value="Carey Radin">Carey Radin</option>
+        <option value="Marve Chominski">Marve Chominski</option>
       </select>
     </div>
-    <button onclick="renderLength()" class="btn-main">Length</button>
-    <button onclick="renderUrl(), blog(39)" class="btn-main">#39</button>
-    <button onclick="renderUrl(), blog(7)" class="btn-main">#7</button>
+
+    <div class="button-group">
+        <button onclick="renderUrl(), blog(39)" class="btn-main">#39</button>
+        <button onclick="renderUrl(), blog(7)" class="btn-main">#7</button>
+        <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main btn-black">Submit</button>    
+        <button id="btnPrev" class="btn-main">Prev</button>
+        <button id="btnNext" class="btn-main">Next</button>
+    </div>
  </div>
-</div>
-  
-
-
-  
+  </div>
 
 
 
+  <div id="blogs" class="blog-cards"></div>
 
-
-    
-    <div class="blog-cards"></div>
-
-    <script src="js/blog-fetch.js"></script>
+  <script src="js/blog-fetch.js"></script>
 </body>
 </html>
