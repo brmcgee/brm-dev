@@ -601,7 +601,6 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
   flex-direction:column;
   width:400px;
   margin-bottom:60px;
-  background-color: #e9e9e9;
   margin: 3px;
 }
 .card-res>div{
@@ -609,13 +608,13 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
 }
 .card-res .card-image{
   width:400px;
-  height:295px;
+  height:315px;
 }
 .card-res .card-image>img{
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:bottom;
+  object-position:center;
 }
 .card-res .card-text{
   margin:-30px auto;
@@ -663,8 +662,9 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
   border-radius: 50%;
   color:#fff;
   margin:0 auto auto 5vw;
+  margin-left: auto;
   position: relative;
-  top: -90px;
+  top: -105px;
   right: -60px;
 }
 .card-res .card-avatar img {
@@ -681,16 +681,26 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
         renderUrl("all")
     })
    </script>
+    <div class="row">
 
-    <div class="col-lg-6  mx-auto d-block p-3">
+    <div class="col-lg-4  mx-auto d-block p-1">
         <div class="btn-group ms-3">
             <button class="btn btn-danger btn-main" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Menu</button>
             <button id="btnPrev" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Prev">Prev</button>
             <button id="btnNext" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Next">Next</button>
-            <button id="btnReg" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('reg')">Reg</button>
-            <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('hover')">Hover</button>
+
+
         </div>
     </div>
+    <div class="col-lg-4 mx-auto d-block p-1">
+      <div class="btn-group ms-3">
+        <button id="btnReg" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('reg')">Reg</button>
+        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('hover')">Hover</button>
+        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('standard')">Standard</button>        
+      </div>
+    </div>
+          
+  </div>
 
 
 
@@ -750,12 +760,12 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
       </div>
       </div>
     </div>
-
+<!-- 
     <p class="float-end small position-absolute text-dark w-25" style="top:0;right:0;">
       <span>
-        <!-- <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="BRM" style="width: 50px; height: 50px;"> -->
+        <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="BRM" style="width: 50px; height: 50px;">
       </span> Results<span id="totalQ"></span>
-    </p>
+    </p> -->
 
     <div class="row"> 
       <div id="blogs" class="blog-cards row flip-container"></div>

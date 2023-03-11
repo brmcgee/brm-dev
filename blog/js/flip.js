@@ -60,6 +60,50 @@ async function renderBlogs(active) {
         let container = document.querySelector('.blog-cards');
         container.innerHTML = html;
         return
+    } 
+    else if (active === "standard") {
+            
+        blogs.forEach(blog => {
+          
+          let htmlSegment = `
+  
+          <div class="card-res">
+          <div class="card-image">
+            <img src="${blog.img1}">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">${blog.category}</p>
+            <h2 class="card-title">${blog.title}</h2>
+            <p class="card-body">${blog.body}</p>
+            <p class="card-body">${blog.author}<span class="ms-3"><small class="text-secondary">${blog.date}</small></span></p>
+            <div class="card-price"><img src="${blog.avatar}"></div>
+
+            <p class="card-body"></p>
+
+          </div>
+          <div class="card-avatar"><img src="${blog.img2}"></div>
+          </div>    
+          
+          `;   
+  
+          //filter categories
+          let filter = blog.project.toLowerCase();
+          let cat = document.getElementById("catData").value;
+          if (filter === cat) { html += htmlSegment; }
+          // if (cat === "all") { html += htmlSegment; }
+    
+          // filter card type 
+          let author = document.getElementById("authorData").value;
+          let aFiltered = blog.author;
+          if (aFiltered === author) { html += htmlSegment;}
+  
+          if (author === "all" && cat === "all") {
+            html += htmlSegment;
+          }
+        });
+        let container = document.querySelector('.blog-cards');
+        container.innerHTML = html;
+        return
     }
    
     else if (active === "reg") {
@@ -154,6 +198,7 @@ async function renderBlogs(active) {
       });
       let container = document.querySelector('.blog-cards');
       container.innerHTML = html;
+      
     } 
     
     else {
@@ -206,7 +251,7 @@ function renderUrl () {
 }
 
 function renderLength(){
-    let blogs = document.querySelectorAll("#blogCard");
+    let blogs = document.querySelectorAll(".card-res");
     return blogs;
 }
 
