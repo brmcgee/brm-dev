@@ -26,28 +26,40 @@ async function renderBlogs(active) {
     
         let htmlSegment = `
 
-        <div class="service col-sm-12 col-xl-6 col-md-8 mx-auto d-block">
-          <div class="card mx-auto d-block" id="blogCard">
-            <div class="card-img img-fluid">
-              <img src="${blog.img2}">
-              <img src="${blog.img1}">
-            </div>
-            <div class="card-price">
-              <p>${blog.category}</p>
-            </div>
-            <div class="card-body">
-              <h4 class="">${blog.title}</h4>
-              <p>${blog.body}</p>
-            </div>
-            <div class="card-user">
-              <img src="${blog.avatar}">
-              <div class="user-info">
-                <h5>${blog.author}</h5>
-                <small>${blog.date}</small>
+        <div class="blog-card">
+          <div class="blog">
+
+            <div class="top">
+
+              <div class="head-top">
+                <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" style="width:75px;height:75px;">
+                <h1>${blog.category}</h1>
+              </div>
+
+              <div class="img-top">
+                <img src="${blog.img2}">
+                <img src="${blog.img1}">
               </div>
             </div>
+
+            <div class="user">
+              <img src="${blog.avatar}" style="height:75px;width:75px;border-radius:50px;">
+              
+              <div class="user-content">
+                <p>${blog.author}</p>
+                <p>${blog.date}</p>
+              </div>
+            </div>
+
+            <div class="content">
+              <h2>${blog.title}</h2>
+              <p>${blog.body}</p>
+              <p>Category -- ${blog.project}</p>
+              <p style="color:blue;margin:0;padding:0;">category selection --> ${document.getElementById("catData").value}</p>
+              <p style="color:red;margin:0;padding:0;">author selection --> ${document.getElementById("authorData").value}</p>
+            </div>
           </div>
-        </div>    `;   
+        </div>       `;   
 
         //filter categories
         let filter = blog.project.toLowerCase();
@@ -73,29 +85,41 @@ async function renderBlogs(active) {
           if (singleCount++ === index) {
             
             let segment = `
-            <div class="blog-wide col-xl-8 col-md-10 col-sm-12 mx-auto d-block">
-            <div class="card mx-auto d-block" id="blogCard">
-                <div class="card-img img-fluid">
+            <div class="blog-card">
+              <div class="blog">
+    
+                <div class="top">
+    
+                  <div class="head-top">
+                    <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" style="width:75px;height:75px;">
+                    <h1>${blogs[index].category}</h1>
+                  </div>
+    
+                  <div class="img-top">
                     <img src="${blogs[index].img2}">
                     <img src="${blogs[index].img1}">
+                  </div>
                 </div>
-                <div class="card-price">
-                    <p>${blogs[index].category}</p>
-                </div><div class="card-body">
-                    <h4 class="">${blogs[index].title}</h4>
-                    <p>${blogs[index].body}</p>
+    
+                <div class="user">
+                  <img src="${blogs[Number(active)].avatar}" style="height:75px;width:75px;border-radius:50px;">
+                  
+                  <div class="user-content">
+                    <p>${blogs[index].author}</p>
+                    <p>${blogs[index].date}</p>
+                  </div>
                 </div>
-                <div class="card-user"><img src="${blogs[Number(active)].avatar}">
-                    <div class="user-info">
-                        <h5>${blogs[index].author}</h5>
-                        <small>${blogs[index].date}</small>
-                        <div>
-                    </div>
+    
+                <div class="content">
+                  <h2>${blogs[index].title}</h2>
+                  <p>${blogs[index].body}</p>
+                  <p>Category -- ${blogs[index].project}</p>
+                  <p>index ${singleCount - 1}</p>
+                  <p style="color:blue;margin:0;padding:0;">category selection --> ${document.getElementById("catData").value}</p>
+                  <p style="color:red;margin:0;padding:0;">author selection --> ${document.getElementById("authorData").value}</p>
                 </div>
-                <p class="ms-5 pt-1 small color-dark">${blogs[index].project}</p>
-            </div>
-          </div>
-          </div>   `;
+              </div>
+            </div>       `;
             
             html = segment;
             container = document.querySelector('.blog-cards');
@@ -117,7 +141,7 @@ function renderUrl () {
 }
 
 function renderLength(){
-    let blogs = document.querySelectorAll("#blogCard");
+    let blogs = document.querySelectorAll(".blog-card");
     return blogs;
 }
 
