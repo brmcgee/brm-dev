@@ -105,7 +105,6 @@ async function renderBlogs(active) {
         container.innerHTML = html;
         return
     }
-   
     else if (active === "reg") {
             
         blogs.forEach(blog => {
@@ -155,8 +154,7 @@ async function renderBlogs(active) {
         container.innerHTML = html;
         return
     } 
-
-    else if (active === "hover") {
+    else if (active === "flip") {
       blogs.forEach(blog => {       
         let htmlSegment = `
         <div class="box-item1">
@@ -200,7 +198,98 @@ async function renderBlogs(active) {
       container.innerHTML = html;
       
     } 
+    else if (active === "dark") {
+            
+        blogs.forEach(blog => {
+          
+          let htmlSegment = `
+  
+          <div class="col-md-6 col-xl-4">
+            <div class="card mx-auto d-block blog-item m-3" style="width: 390px;">
+              <div class="rounded-top">
+                <img class="img-fluid" src="${blog.img1}" style="width: 390px; height: 300px; object-fit: cover;"> 
+              </div>
+              <div class="product-header display-4 color-red text-russo">
+                <h2 class="p-3 h4 text-uppercase bg-red btn-rounded ms-2 mt-2 py-1 px-3" style="position: absolute; top: 1px; color: white;">${blog.category}</h2>
+              </div>
+              <div class="bg-dark d-flex-column align-items-center p-4 p-1">
+                <h4 class="fs-5 text-uppercase text-light me-3 d-flex">${blog.title}
+                  <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" class="img-fluid mx-auto d-block ms-1" style="width: 140px; height: 70px;">
+                </h4>
+                <p class="text-light text-roboto lead">${blog.body}</p>
+              </div><div class="card-user">
+              <div class="user-info bg-dark">
+                <img src="${blog.avatar}" class="p-2"style="width:60px;height:60px;border-radius:50px;>
+                <a class="text-light text-roboto ps-5 mb-0 pb-0"><span class="text-light ms-3">${blog.author}</span></a>
+                <small class="text-roboto ps-5 small mt-0 pt-0 pb-2 text-light">${blog.date}</small>
+              </div>
+            </div>
+          </div>
+        </div>        
+`;   
+  
+          //filter categories
+          let filter = blog.project.toLowerCase();
+          let cat = document.getElementById("catData").value;
+          if (filter === cat) { html += htmlSegment; }
+          // if (cat === "all") { html += htmlSegment; }
     
+          // filter card type 
+          let author = document.getElementById("authorData").value;
+          let aFiltered = blog.author;
+          if (aFiltered === author) { html += htmlSegment;}
+  
+          if (author === "all" && cat === "all") {
+            html += htmlSegment;
+          }
+        });
+        let container = document.querySelector('.blog-cards');
+        container.innerHTML = html;
+        return
+    }
+    else if (active === "overlay") {
+            
+        blogs.forEach(blog => {
+          
+          let htmlSegment = `
+          
+          <div class="col-lg-6 mx-auto d-block mt-2" style="height:60vh;min-width:60%;">
+          <div class="p-1 card-overlay card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-l" 
+          style="background: linear-gradient(rgba(19, 16, 34, 0.58) 0%, rgba(19, 16, 34, 0.78) 100%) 0% 0% / cover, 
+          url(${blog.img1}) center center no-repeat;background-size: cover;">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <div class="lc-block pt-5 mt-5 mb-4">
+              <h1 class="h1 text-uppercase btn-main text-center btn-rounded mt-2 " style="position: relative; top: 2px; color: white;overflow:hidden;min-width:25%;width:30%;">${blog.category}</h1>
+                <h2 class="display-6 fw-bold">${blog.title}</h2>
+                <p>${blog.body}</p>
+              </div>
+              <ul class="d-flex list-unstyled mt-auto ms-auto">
+                <a class="btn btn-link btn-sm text-white" href="${blog.img2}" role="button">${blog.author}</a>
+                <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" class="float-start ms-5" style="height: 50px;border-radius:50px;width:80px;height:80px;">
+              </ul>
+            </div>
+          </div>
+        </div>            `;   
+  
+          //filter categories
+          let filter = blog.project.toLowerCase();
+          let cat = document.getElementById("catData").value;
+          if (filter === cat) { html += htmlSegment; }
+          // if (cat === "all") { html += htmlSegment; }
+    
+          // filter card type 
+          let author = document.getElementById("authorData").value;
+          let aFiltered = blog.author;
+          if (aFiltered === author) { html += htmlSegment;}
+  
+          if (author === "all" && cat === "all") {
+            html += htmlSegment;
+          }
+        });
+        let container = document.querySelector('.blog-cards');
+        container.innerHTML = html;
+        return
+    }
     else {
         blogs.forEach((blog) => {
           let index = Number(active);

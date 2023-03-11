@@ -30,7 +30,7 @@
 <script src="https://kit.fontawesome.com/8ab1cf7876.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://kit.fontawesome.com/8ab1cf7876.css" crossorigin="anonymous"> 
 
-
+<!-- controls  -->
 <style>
     *{
         overflow-x: hidden;
@@ -42,46 +42,6 @@
         position: relative;
         background-color: #e4e4e4;
     }
-    /* .wrapper,
-    .blog-cards {
-        max-width:900px;
-        margin: auto;
-    }
-
-    .blog-cards .blog-card .blog {
-
-        border: 1px solid #333;
-        border-radius: 20px;
-        padding: 0;
-        margin: 2px;
-    }
-    .blog-card .blog .top .head-top {
-        background-color: #333;
-        color: white;
-        display: grid;
-        grid-template-columns: 1fr 7fr;
-    }
-    .head-top h1 {
-        margin: 4px auto 4px 20px;
-        padding-top: 15px;
-        font-size: 36px;
-        text-transform: uppercase;
-    }
-    .top .head-top img {
-        padding: 8px;
-    }
-    .blog-card .blog .top .img-top img {
-        width: 49%;
-        max-height: 500px;
-        height: 300px;
-        margin: auto;
-    }
-    .blog-head {
-        padding: 0px;
-        margin: 0px; 
-    }
-     */
-
     .blog-controls {
         border: 1px solid #333;
         border-radius: 10px;
@@ -134,6 +94,7 @@
 
 </style>
 
+<!-- reg  -->
 <style>
     /* ======== SERVICES CARD ======== */ 
 
@@ -568,15 +529,11 @@
 }
 </style>
 
-<!-- rest  -->
+<!-- standard  -->
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap');
 
-body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
-  background-size:cover;
-  background-position:right;
-  background-attachment:fixed;
-}
+
 #header{
   margin:20px;
 }
@@ -673,15 +630,109 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
 }
 
 </style>
+
+<!-- dard card  -->
+<style>
+@media (max-width: 550px) {
+    .products {
+        padding-left: 5px;
+    }
+    .products .card {
+        
+        margin: auto;
+    }
+}
+.product-container {
+    width: 97%;
+    margin: auto;
+    
+}
+
+@media (min-width: 1100px) {
+    .product-container {
+        width: 80vw;
+        margin: auto;
+    }
+}
+
+.product-header h2 {
+    background-color: rgb(163, 30, 30);
+    border-radius: 50px;
+    font-size: 34px;
+    font-family: 'Russo One', sans-serif;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    text-transform: uppercase;
+    
+    padding: 5px;
+}
+.product-header p {
+    line-height: 24px;
+    font-size: 19px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    font-family: 'Montserrat', sans-serif;
+    text-indent: .4cm;
+}
+
+.products .card {
+    height: 460px;
+    max-width: 390px;
+    margin: 8px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: 1px solid #898989;
+}
+.products .card .card-title h4  {
+    font-family: 'Russo One', sans-serif;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 3px 0;
+    color: #fff;
+    /* border: 3px solid var(--bg-primary); */
+    background-color: var(--bg-primary);
+    padding: 8px;
+}
+.products .card .card-body {
+    height: 155px;
+}
+.products .card .card-body p  {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    text-indent: .3cm;
+}
+.products .card .card-img img {
+    width: 100%;
+    height: 240px;
+    margin: auto auto auto auto;
+    object-fit: fill;
+    background-color: var(--bg-icon);    
+}
+.product .card .user-info p {
+  color: white;
+} 
+
+/* ======== PRODUCT END/ ======== */ 
+
+</style>
+
 </head>
 <body>
-  <script>
+  <!-- initial load  -->
+<script>
     document.addEventListener("DOMContentLoaded", () => {
         renderUrl();
         renderUrl("all")
     })
-   </script>
-    <div class="row">
+</script>
+
+
+  <div class="row">
 
     <div class="col-lg-4  mx-auto d-block p-1">
         <div class="btn-group ms-3">
@@ -695,7 +746,9 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
     <div class="col-lg-4 mx-auto d-block p-1">
       <div class="btn-group ms-3">
         <button id="btnReg" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('reg')">Reg</button>
-        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('hover')">Hover</button>
+        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('flip')">Flip</button>
+        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('dark')">Dark</button> 
+        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('overlay')">Overlay</button>
         <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('standard')">Standard</button>        
       </div>
     </div>
@@ -704,7 +757,7 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
 
 
 
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasScrollingLabel">BRM Blog Data Welcome</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -759,23 +812,18 @@ body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
             </div>
       </div>
       </div>
-    </div>
-<!-- 
-    <p class="float-end small position-absolute text-dark w-25" style="top:0;right:0;">
-      <span>
-        <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="BRM" style="width: 50px; height: 50px;">
-      </span> Results<span id="totalQ"></span>
-    </p> -->
+  </div>
 
-    <div class="row"> 
-      <div id="blogs" class="blog-cards row flip-container"></div>
-    </div>
+  <div class="row"> 
+    <div id="blogs" class="blog-cards row flip-container"></div>
+  </div>
 
-   
-
+  
 
   <script src="js/flip.js"></script>
 </body>
 </html>
+
+
 
 
