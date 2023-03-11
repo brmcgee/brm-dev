@@ -34,11 +34,15 @@ async function renderBlogs(active) {
             <h2 class="card-title">${blog.title}</h2>
             <p class="card-body">${blog.body}</p>
             <p class="card-body">${blog.author}<span class="float-end"><small class="text-secondary">${blog.date}</small></span></p>
+            <div class="card-price"><img src="${blog.img2}"></div>
+
             <p class="card-body"></p>
 
           </div>
-          <div class="card-price"><img src="${blog.img2}"></div>
-          </div>     `;   
+          <div class="card-avatar"><img src="https://www.brmcontractors.net/assets/logo/brm.jpg"></div>
+          </div>    
+          
+          `;   
   
           //filter categories
           let filter = blog.project.toLowerCase();
@@ -129,8 +133,6 @@ async function renderBlogs(active) {
             <small><span> <img src="${blog.avatar}" style="width:50px;height:50px;border-radius:50px;" alt="" class="flip-box-img"></span></small>
             <small>${blog.date}</small>
 
-              
-              
               
               <button class="btn-main">${blog.author}</button>
             </div>
