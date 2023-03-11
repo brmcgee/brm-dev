@@ -17,33 +17,37 @@
         background-color: #e7e7e7;
     }
     .wrapper,
-    .container {
+    .blog-cards {
         max-width:900px;
-        padding: 2px;
         margin: auto;
     }
-    .blog-card {
-        background-color: #e9d9d9;
+
+    .blog-cards .blog-card .blog {
+        background-color: #ffffff;
         border: 1px solid #333;
-        border-radius: 10px;
-        margin: 5px;
+        border-radius: 20px;
+        padding: 0;
+        margin: 2px;
     }
-    .blog-card .blog .top h5{
-        display: none;
+    .blog-card .blog .top .head-top {
+        background-color: #333;
+        color: white;
+    }
+    .head-top h1 {
+        margin: 4px auto 4px 20px;
+        text-transform: uppercase;
     }
     .blog-card .blog .top img {
-        width: 280px;
-        height: 350px;
+        width: 49%;
+        height: 50vw;
+        margin: auto;
     }
     .blog-head {
         padding: 0px;
         margin: 0px; 
     }
     
-    .blog-head h2 {
-        margin: 4px auto 4px 20px;
-        text-transform: uppercase;
-    }
+
     .blog-controls {
         border: 1px solid #333;
         border-radius: 10px;
@@ -56,9 +60,14 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-    }
-    .blog-card .blog .user .user-content {
+        justify-content: flex-start;
         padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .blog .content {
+        padding-left: 25px;
+        padding-right: 20px;
     }
     select {
         height: 30px;
@@ -98,9 +107,9 @@
         </select>
     </div>
   
-    <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main">Submit</button> <br>
-  
-    <br>
+    <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main">Submit</button>
+    
+
     <div class="category-source">
       <label for="catData">Please select category:</label>
       <select id="catData" name="catData">
@@ -139,7 +148,7 @@
 
 
     
-    <div class="container"></div>
+    <div class="blog-cards"></div>
 
     <script src="js/blog-fetch.js"></script>
 </body>
