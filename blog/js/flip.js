@@ -1,6 +1,4 @@
-// let url = "https://www.brmcontractors.net/assets/data/brm.json";
 
-        
 async function getBlogs() {
     try {
         let res = await fetch(url);
@@ -33,13 +31,13 @@ async function renderBlogs(active) {
             <p class="card-meal-type">${blog.category}</p>
             <h2 class="card-title">${blog.title}</h2>
             <p class="card-body">${blog.body}</p>
-            <p class="card-body">${blog.author}<span class="float-end"><small class="text-secondary">${blog.date}</small></span></p>
-            <div class="card-price"><img src="${blog.img2}"></div>
+            <p class="card-body">${blog.author}<span class="ms-3"><small class="text-secondary">${blog.date}</small></span></p>
+            <div class="card-price"><img src="${blog.avatar}"></div>
 
             <p class="card-body"></p>
 
           </div>
-          <div class="card-avatar"><img src="https://www.brmcontractors.net/assets/logo/brm.jpg"></div>
+          <div class="card-avatar"><img src="${blog.img2}"></div>
           </div>    
           
           `;   
