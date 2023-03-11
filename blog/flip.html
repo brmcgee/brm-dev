@@ -424,7 +424,6 @@
 <!-- flip  -->
 <style>
     html {
-  font-family: sans-serif;
   box-sizing: border-box;
 }
 
@@ -568,14 +567,112 @@
   text-transform: uppercase;
 }
 </style>
+
+<!-- rest  -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+
+body{ background:url(https://www.brmcontractors.net/logo/brm.jpg);
+  background-size:cover;
+  background-position:right;
+  background-attachment:fixed;
+}
+#header{
+  margin:20px;
+}
+#header>h1{
+  text-align:center;
+  font-size:2rem;
+}
+#header>p{
+  text-align:center;
+  font-size:1.5rem;
+  font-style:italic;
+}
+.container{
+  width:100vw;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  padding:40px 20px;
+}
+.card-res{
+  display:flex;
+  flex-direction:column;
+  width:400px;
+  margin-bottom:60px;
+}
+.card-res>div{
+  box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
+}
+.card-res .card-image{
+  width:400px;
+  height:295px;
+}
+.card-res .card-image>img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:bottom;
+}
+.card-res .card-text{
+  margin:-30px auto;
+  margin-bottom:-50px;
+  min-height:450px;
+  width:300px;
+  background-color:#1D1C20;
+  color:#fff;
+  padding:20px;
+}
+.card-res .card-meal-type{
+  background-color: rgb(163,30,30);
+  text-align: center;
+  border-radius: 50px;
+  padding: 4px 10px 4px 10px;
+  width:200px;
+}
+.card-res .card-title{
+  font-size:1.2rem;
+  margin-bottom:3px;
+  margin-top:2px;
+}
+.card-res .card-body{
+  font-size:1rem;
+}
+.card-res .card-price{
+  width:180px;
+  height:180px;
+  border-radius: 50%;
+  color:#fff;
+  margin-left:auto;
+  font-size:2rem;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+}
+.card-res .card-price img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+}
+
+</style>
 </head>
 <body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        renderUrl();
+        renderUrl("all")
+    })
+   </script>
+
     <div class="col-lg-6  mx-auto d-block p-3">
         <div class="btn-group ms-3">
             <button class="btn btn-danger btn-main" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Menu</button>
             <button id="btnPrev" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Prev">Prev</button>
             <button id="btnNext" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Next">Next</button>
-            <button id="btnNext" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('reg')">Reg</button>
+            <button id="btnReg" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('reg')">Reg</button>
+            <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('hover')">Hover</button>
         </div>
     </div>
 
@@ -640,7 +737,7 @@
 
     <p class="float-end small position-absolute text-dark w-25" style="top:0;right:0;">
       <span>
-        <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="BRM" style="width: 50px; height: 50px;">
+        <!-- <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="BRM" style="width: 50px; height: 50px;"> -->
       </span> Results<span id="totalQ"></span>
     </p>
 

@@ -1,4 +1,6 @@
+// let url = "https://www.brmcontractors.net/assets/data/brm.json";
 
+        
 async function getBlogs() {
     try {
         let res = await fetch(url);
@@ -25,15 +27,14 @@ async function renderBlogs(active) {
   
           <div class="card-res">
           <div class="card-image">
-            <img src="${blog.img2}">
+            <img src="${blog.img1}">
           </div>
           <div class="card-text">
             <p class="card-meal-type">${blog.category}</p>
             <h2 class="card-title">${blog.title}</h2>
             <p class="card-body">${blog.body}</p>
-           
-            <p class="card-body"><span><img src="${blog.avatar}" style="border-radius:50px;width:70px;height:70px;" class="me-2"></span> ${blog.author}</p>
-            <p class="mb-5 p-0 text-info" style="font-size:13px;">${blog.date}</p>
+            <p class="card-body">${blog.author}<span class="float-end"><small class="text-secondary">${blog.date}</small></span></p>
+            <p class="card-body"></p>
 
           </div>
           <div class="card-price"><img src="${blog.img2}"></div>
@@ -112,11 +113,11 @@ async function renderBlogs(active) {
     else if (active === "hover") {
       blogs.forEach(blog => {       
         let htmlSegment = `
-        <div class="box-item">
-        <div class="flip-box">
+        <div class="box-item1">
+        <div class="flip-box  col-sm-12 col-md-6  mx-auto d-block">
           <div class="flip-box-front text-center" style="background-image: url('${blog.img2}');">
             <div class="inner color-white">
-              <h3 class="flip-box-header">${blog.category}</h3>
+              <h2 class="flip-box-header text-uppercase">${blog.category}</h2>
               <p>${blog.title}</p>
               <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" style="width:50px;height:50px;" alt="" class="flip-box-img">
             </div>
@@ -134,7 +135,7 @@ async function renderBlogs(active) {
               <button class="btn-main">${blog.author}</button>
             </div>
           </div>
-        </div>   `;   
+        </div>  <br> `;   
 
         //filter categories
         let filter = blog.project.toLowerCase();
