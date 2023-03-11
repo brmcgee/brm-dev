@@ -1,6 +1,4 @@
-// let url = "https://www.brmcontractors.net/assets/data/brm.json";
 
-        
 async function getBlogs() {
     try {
         let res = await fetch(url);
@@ -20,50 +18,47 @@ async function renderBlogs(active) {
     length = blogs.length;
    
     if (active === "all") {
-      blogs.forEach(blog => {       
-        let htmlSegment = `
-        <div class="box-item">
-        <div class="flip-box">
-          <div class="flip-box-front text-center" style="background-image: url('${blog.img2}');">
-            <div class="inner color-white">
-              <h3 class="flip-box-header">${blog.category}</h3>
-              <p>${blog.title}</p>
-              <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" style="width:50px;height:50px;" alt="" class="flip-box-img">
-            </div>
-          </div>
-          <div class="flip-box-back text-center" style="background-image: url('${blog.img1}');overflow:hidden">
-            <div class="inner color-white">
-            <h4>${blog.title}</h4>
-            <p>${blog.body}</p>
-            <small><span> <img src="${blog.avatar}" style="width:50px;height:50px;border-radius:50px;" alt="" class="flip-box-img"></span></small>
-            <small>${blog.date}</small>
-
-              
-              
-              
-              <button class="btn-main">${blog.author}</button>
-            </div>
-          </div>
-        </div>   `;   
-
-        //filter categories
-        let filter = blog.project.toLowerCase();
-        let cat = document.getElementById("catData").value;
-        if (filter === cat) { html += htmlSegment; }
-        // if (cat === "all") { html += htmlSegment; }
+            
+        blogs.forEach(blog => {
+          
+          let htmlSegment = `
   
-        // filter card type 
-        let author = document.getElementById("authorData").value;
-        let aFiltered = blog.author;
-        if (aFiltered === author) { html += htmlSegment;}
+          <div class="card-res">
+          <div class="card-image">
+            <img src="${blog.img2}">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">${blog.category}</p>
+            <h2 class="card-title">${blog.title}</h2>
+            <p class="card-body">${blog.body}</p>
+           
+            <p class="card-body"><span><img src="${blog.avatar}" style="border-radius:50px;width:70px;height:70px;" class="me-2"></span> ${blog.author}</p>
+            <p class="mb-5 p-0 text-info" style="font-size:13px;">${blog.date}</p>
 
-        if (author === "all" && cat === "all") {
-          html += htmlSegment;
-        }
-      });
-      let container = document.querySelector('.blog-cards');
-      container.innerHTML = html;
-    } 
+          </div>
+          <div class="card-price"><img src="${blog.img2}"></div>
+          </div>     `;   
+  
+          //filter categories
+          let filter = blog.project.toLowerCase();
+          let cat = document.getElementById("catData").value;
+          if (filter === cat) { html += htmlSegment; }
+          // if (cat === "all") { html += htmlSegment; }
+    
+          // filter card type 
+          let author = document.getElementById("authorData").value;
+          let aFiltered = blog.author;
+          if (aFiltered === author) { html += htmlSegment;}
+  
+          if (author === "all" && cat === "all") {
+            html += htmlSegment;
+          }
+        });
+        let container = document.querySelector('.blog-cards');
+        container.innerHTML = html;
+        return
+    }
+   
     else if (active === "reg") {
             
         blogs.forEach(blog => {
@@ -113,6 +108,52 @@ async function renderBlogs(active) {
         container.innerHTML = html;
         return
     } 
+
+    else if (active === "hover") {
+      blogs.forEach(blog => {       
+        let htmlSegment = `
+        <div class="box-item">
+        <div class="flip-box">
+          <div class="flip-box-front text-center" style="background-image: url('${blog.img2}');">
+            <div class="inner color-white">
+              <h3 class="flip-box-header">${blog.category}</h3>
+              <p>${blog.title}</p>
+              <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" style="width:50px;height:50px;" alt="" class="flip-box-img">
+            </div>
+          </div>
+          <div class="flip-box-back text-center" style="background-image: url('${blog.img1}');overflow:hidden">
+            <div class="inner color-white">
+            <h4>${blog.title}</h4>
+            <p>${blog.body}</p>
+            <small><span> <img src="${blog.avatar}" style="width:50px;height:50px;border-radius:50px;" alt="" class="flip-box-img"></span></small>
+            <small>${blog.date}</small>
+
+              
+              
+              
+              <button class="btn-main">${blog.author}</button>
+            </div>
+          </div>
+        </div>   `;   
+
+        //filter categories
+        let filter = blog.project.toLowerCase();
+        let cat = document.getElementById("catData").value;
+        if (filter === cat) { html += htmlSegment; }
+        // if (cat === "all") { html += htmlSegment; }
+  
+        // filter card type 
+        let author = document.getElementById("authorData").value;
+        let aFiltered = blog.author;
+        if (aFiltered === author) { html += htmlSegment;}
+
+        if (author === "all" && cat === "all") {
+          html += htmlSegment;
+        }
+      });
+      let container = document.querySelector('.blog-cards');
+      container.innerHTML = html;
+    } 
     
     else {
         blogs.forEach((blog) => {
@@ -151,9 +192,10 @@ async function renderBlogs(active) {
          
     })
     }
-  singleCount = 0;
-  totalQuery.innerHTML = renderLength().length;
-  totalQuery.style.fontSize = "16px";
+
+    singleCount = 0;
+    totalQuery.innerHTML = renderLength().length;
+    totalQuery.style.fontSize = "16px";
 }
 
 // renderBlogs();
