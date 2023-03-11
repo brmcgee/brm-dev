@@ -73,7 +73,7 @@ async function renderBlogs(active) {
           if (singleCount++ === index) {
             
             let segment = `
-            <div class="blog-wide col-xl-8 col-md-10 col-sm-12 mx-auto d-block">
+            <div class="blog-wide col-xl-10 col-md-10 col-sm-12 mx-auto d-block">
             <div class="card mx-auto d-block" id="blogCard">
                 <div class="card-img img-fluid">
                     <img src="${blogs[index].img2}">
