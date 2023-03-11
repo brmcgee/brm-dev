@@ -10,13 +10,19 @@ async function getBlogs() {
 }
 
 let singleCount = 0;
+let length = 0;
+let totalQuery = document.getElementById("totalQ");
+
 async function renderBlogs(active) {
     let blogs = await getBlogs();
     let html = '';
+    length = blogs.length;
    
+
 
     if (active === "all") {
       blogs.forEach(blog => {
+        
     
         let htmlSegment = `
 
@@ -117,12 +123,15 @@ async function renderBlogs(active) {
             
             html = segment;
             container = document.querySelector('.blog-cards');
-            return container.innerHTML = html;
+            container.innerHTML = html;
           }
          
     })
   }
   singleCount = 0;
+  totalQuery.innerHTML = renderLength().length;
+  totalQuery.style.fontSize = "16px";
+
 }
 // renderBlogs();
 
@@ -133,11 +142,32 @@ function renderUrl () {
 
 function renderLength(){
     let blogs = document.querySelectorAll(".blog-card");
-    window.alert(blogs.length);
+    return blogs;
 }
 
 //create blog at index i
+let activeIndex = 0;
 function blog(i) {
   renderBlogs(i);
 }
 
+let next = document.getElementById("btnNext");
+let prev = document.getElementById("btnPrev");
+
+next.addEventListener("click", () => {
+  renderUrl();
+  if (activeIndex >= length -1) {
+    activeIndex = 0;
+  }
+  activeIndex++;
+  blog(activeIndex);
+});
+
+prev.addEventListener("click", () => {
+  renderUrl();
+  if (activeIndex <= 0) {
+    activeIndex = length;
+  }
+  activeIndex--;
+  blog(activeIndex);
+})
