@@ -21,13 +21,15 @@ async function renderBlogs() {
         let htmlSegment = `
 
         <div class="blog-card">
-          <div class="blog" style="padding:12px;">
+          <div class="blog">
             <div class="top">
-              <h1>${blog.category}</h1>
- <h5 style="color:blue">category selection --> ${document.getElementById("catData").value}</h5>
- <h5 style="color:red">author selection --> ${document.getElementById("authorData").value}</h5>
-              <img src="${blog.img2}">
-              <img src="${blog.img1}">
+              <div class="head-top">
+                <h1><span><img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" style="width:75px;height:75px;"></span>${blog.category}</h1>
+              </div>
+              <div class="img-top">
+                <img src="${blog.img2}">
+                <img src="${blog.img1}">
+              </div>
             </div>
             <div class="user">
               <img src="${blog.avatar}" style="height:75px;width:75px;border-radius:50px;">
@@ -40,6 +42,8 @@ async function renderBlogs() {
               <h2>${blog.title}</h2>
               <p>${blog.body}</p>
               <p>Category -- ${blog.project}</p>
+              <p style="color:blue;margin:0;padding:0;">category selection --> ${document.getElementById("catData").value}</p>
+              <p style="color:red;margin:0;padding:0;">author selection --> ${document.getElementById("authorData").value}</p>
             </div>
           </div>
         </div>       `;
@@ -62,7 +66,7 @@ async function renderBlogs() {
         }
     });
 
-    let container = document.querySelector('.container');
+    let container = document.querySelector('.blog-cards');
     container.innerHTML = html;
 }
 // renderBlogs();
