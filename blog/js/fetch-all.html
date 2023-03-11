@@ -5,13 +5,345 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch BRM data</title>
+<style>
+    *{
+        overflow-x: hidden;
+    }
+    body {
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: auto;
+        position: relative;
+        background-color: #e7e7e7;
+    }
+    .wrapper,
+    .blog-cards {
+        max-width:900px;
+        margin: auto;
+    }
+
+    .blog-cards .blog-card .blog {
+        /* background-color: #ffffff; */
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 0;
+        margin: 2px;
+    }
+    .blog-card .blog .top .head-top {
+        background-color: #333;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+    }
+    .head-top h1 {
+        margin: 4px auto 4px 20px;
+        padding-top: 15px;
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+    .top .head-top img {
+        padding: 8px;
+    }
+    .blog-card .blog .top .img-top img {
+        width: 49%;
+        max-height: 500px;
+        height: 300px;
+        margin: auto;
+    }
+    .blog-head {
+        padding: 0px;
+        margin: 0px; 
+    }
+    
+
+    .blog-controls {
+        border: 1px solid #333;
+        border-radius: 10px;
+        background-color: #e7e7e7;
+        max-width: 600px;
+        padding: 5px;
+        margin-left: 8px;
+    }
+    .blog-card .blog .user {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .blog .content {
+        padding-left: 25px;
+        padding-right: 20px;
+    }
+    .button-group {
+        padding: 5px;
+    }
+    select {
+        height: 30px;
+        width: 200px;
+        font-size: 18px;
+    }
+    .category-source,
+    .url-source,
+    .author-source
+    {
+       display: grid;
+       grid-template-columns: 2fr 2fr .2fr;
+       gap: 10px;
+    }
+    .btn-main {
+        background-color: rgb(163,30,30);
+        border: 2px solid rgb(187, 36, 36);
+        border-radius: 50px;
+        color: #e7e7e7;
+        padding: 4px 18px 4px 18px;
+        font-size: 16px;
+    }
+    .btn-black {
+        background-color: #333;
+        border: 2px solid #202020;
+    }
+
+</style>
 </head>
 <body>
+
+  <div class="wrapper">
+ <div class="blog-head">
+    <h2>BRM Blog Data Welcome <span id="totalQ">s</span></h2>
+ </div>
+ <div class="blog-controls">
+    <div class="url-source">
+        <label for="urlData">Choose data:</label>
+        <select id="urlData" name="urlData">
+          <option value="https://www.brmcontractors.net/assets/data/brm.json">BRM</option>
+          <option value="https://brmdev.com/blog/random-data.json">Aux</option>
+        </select>
+    </div>
+  
     
-    <h3>Fetching data form https://www.brmcontractors.net/js/brmBlogs.json</h3>
-    <div class="container">s</div>
+    
+
+    <div class="category-source">
+      <label for="catData">Please select category:</label>
+      <select id="catData" name="catData">
+        <option value="all">All</option>
+        <option value="drywall">Drywall</option>
+        <option value="handyman">Handyman</option>
+        <option value="custom-deck">Custom Deck</option>
+        <option value="handyman">Handyman</option>
+        <option value="repair">Repair</option>
+        <option value="flooring">Flooring</option>
+        <option value="kitchen-remodel-ah">Kitchen</option>
+        <option value="bathroom-remodel-rm">Bathroom Project</option>
+        <option value="bathroom">Bathroom</option>
+        <option value="siding-roofing">Siding and Roofing</option>
+        <option value="clothing">clothing</option>
+      </select>
+    </div>
+    <br>
+    <div class="author-source">
+      <label for="authorData">Please select Author:</label>
+      <select id="authorData" name="authorData">
+        <option value="all">All</option>
+        <option value="Brian McGee">Brian McGee</option>
+        <option value="Heather McGee">Heather McGee</option>
+        <option value="Carey Radin">Carey Radin</option>
+        <option value="Marve Chominski">Marve Chominski</option>
+      </select>
+    </div>
+
+    <div class="button-group">
+        <button onclick="renderUrl(), blog(39)" class="btn-main">#39</button>
+        <button onclick="renderUrl(), blog(7)" class="btn-main">#7</button>
+        <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main btn-black">Submit</button>    
+        <button id="btnPrev" class="btn-main">Prev</button>
+        <button id="btnNext" class="btn-main">Next</button>
+    </div>
+ </div>
+  </div>
 
 
-    <script src="blog-fetch.js"></script>
+
+  <div id="blogs" class="blog-cards"></div>
+
+  <script>
+    // let url = "https://www.brmcontractors.net/assets/data/brm.json";
+
+async function getBlogs() {
+    try {
+        let res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+let singleCount = 0;
+let length = 0;
+let totalQuery = document.getElementById("totalQ");
+
+async function renderBlogs(active) {
+    let blogs = await getBlogs();
+    let html = '';
+    length = blogs.length;
+   
+
+
+    if (active === "all") {
+      blogs.forEach(blog => {
+        
+    
+        let htmlSegment = `
+
+        <div class="blog-card">
+          <div class="blog">
+
+            <div class="top">
+
+              <div class="head-top">
+                <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" style="width:75px;height:75px;">
+                <h1>${blog.category}</h1>
+              </div>
+
+              <div class="img-top">
+                <img src="${blog.img2}">
+                <img src="${blog.img1}">
+              </div>
+            </div>
+
+            <div class="user">
+              <img src="${blog.avatar}" style="height:75px;width:75px;border-radius:50px;">
+              
+              <div class="user-content">
+                <p>${blog.author}</p>
+                <p>${blog.date}</p>
+              </div>
+            </div>
+
+            <div class="content">
+              <h2>${blog.title}</h2>
+              <p>${blog.body}</p>
+              <p>Category -- ${blog.project}</p>
+              <p style="color:blue;margin:0;padding:0;">category selection --> ${document.getElementById("catData").value}</p>
+              <p style="color:red;margin:0;padding:0;">author selection --> ${document.getElementById("authorData").value}</p>
+            </div>
+          </div>
+        </div>       `;   
+
+        //filter categories
+        let filter = blog.project.toLowerCase();
+        let cat = document.getElementById("catData").value;
+        if (filter === cat) { html += htmlSegment; }
+        // if (cat === "all") { html += htmlSegment; }
+  
+        // filter card type 
+        let author = document.getElementById("authorData").value;
+        let aFiltered = blog.author;
+        if (aFiltered === author) { html += htmlSegment;}
+
+        if (author === "all" && cat === "all") {
+          html += htmlSegment;
+        }
+      });
+      let container = document.querySelector('.blog-cards');
+      container.innerHTML = html;
+    } 
+      else {
+        blogs.forEach((blog) => {
+          let index = Number(active);
+          if (singleCount++ === index) {
+            
+            let segment = `
+            <div class="blog-card">
+              <div class="blog">
+    
+                <div class="top">
+    
+                  <div class="head-top">
+                    <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" style="width:75px;height:75px;">
+                    <h1>${blogs[index].category}</h1>
+                  </div>
+    
+                  <div class="img-top">
+                    <img src="${blogs[index].img2}">
+                    <img src="${blogs[index].img1}">
+                  </div>
+                </div>
+    
+                <div class="user">
+                  <img src="${blogs[Number(active)].avatar}" style="height:75px;width:75px;border-radius:50px;">
+                  
+                  <div class="user-content">
+                    <p>${blogs[index].author}</p>
+                    <p>${blogs[index].date}</p>
+                  </div>
+                </div>
+    
+                <div class="content">
+                  <h2>${blogs[index].title}</h2>
+                  <p>${blogs[index].body}</p>
+                  <p>Category -- ${blogs[index].project}</p>
+                  <p>index ${singleCount - 1}</p>
+                  <p style="color:blue;margin:0;padding:0;">category selection --> ${document.getElementById("catData").value}</p>
+                  <p style="color:red;margin:0;padding:0;">author selection --> ${document.getElementById("authorData").value}</p>
+                </div>
+              </div>
+            </div>       `;
+            
+            html = segment;
+            container = document.querySelector('.blog-cards');
+            container.innerHTML = html;
+          }
+         
+    })
+  }
+  singleCount = 0;
+  totalQuery.innerHTML = renderLength().length;
+  totalQuery.style.fontSize = "16px";
+
+}
+// renderBlogs();
+
+function renderUrl () {
+  url = document.getElementById("urlData").value;
+  renderBlogs('all');
+}
+
+function renderLength(){
+    let blogs = document.querySelectorAll(".blog-card");
+    return blogs;
+}
+
+//create blog at index i
+let activeIndex = 0;
+function blog(i) {
+  renderBlogs(i);
+}
+
+let next = document.getElementById("btnNext");
+let prev = document.getElementById("btnPrev");
+
+next.addEventListener("click", () => {
+  renderUrl();
+  if (activeIndex >= length -1) {
+    activeIndex = 0;
+  }
+  activeIndex++;
+  blog(activeIndex);
+});
+
+prev.addEventListener("click", () => {
+  renderUrl();
+  if (activeIndex <= 0) {
+    activeIndex = length;
+  }
+  activeIndex--;
+  blog(activeIndex);
+})
+
+  </script>
 </body>
 </html>
