@@ -112,7 +112,7 @@ async function renderBlogs(active) {
       
           let htmlSegment = `
   
-          <div class="service col-sm-12 col-xl-6 col-md-8 mx-auto d-block">
+          <div class="service col-sm-12 col-xl-4 col-md-7 mx-auto d-block">
           <div class="card mx-auto d-block" id="blogCard">
             <div class="card-img img-fluid">
               <img src="${blog.img2}">
