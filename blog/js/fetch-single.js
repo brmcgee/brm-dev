@@ -329,13 +329,12 @@ async function renderBlogs(active) {
 
 // renderBlogs();
 function renderUrl () {
-  url = document.getElementById("urlData").value;
-  renderBlogs('all');
+  url = "https://www.brmcontractors.net/assets/data/brm.json";
+  randomBlog();
 }
 
 function renderLength(){
     let blogs = document.querySelectorAll(".card-res");
-
     return blogs;
 }
 
@@ -349,23 +348,4 @@ function randomBlog(){
   renderBlogs(random);
 }
 
-let next = document.getElementById("btnNext");
-let prev = document.getElementById("btnPrev");
 
-next.addEventListener("click", () => {
-  renderUrl();
-  if (activeIndex >= length -1) {
-    activeIndex = 0;
-  }
-  activeIndex++;
-  blog(activeIndex);
-});
-
-prev.addEventListener("click", () => {
-  renderUrl();
-  if (activeIndex <= 0) {
-    activeIndex = length;
-  }
-  activeIndex--;
-  blog(activeIndex);
-})
