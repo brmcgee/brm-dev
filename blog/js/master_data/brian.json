@@ -5,12 +5,24 @@
     "title": "Las Vegas Vacation",
     "date": "March 4, 2023",
     "author": "Brian McGee",
-    "avatar": "https://www.brmcontractors.net/blog/assets/gallery/heather.jpg",
-    "body": "The beautiful weather is coming and what more to enjoy it on the beautiful new deck by BRM. Need a new bathroom, we can help. Bathroom remodel and general home repair. Call or connect today for a free estimate!",
+    "avatar": "https://www.brmcontractors.net/blog/assets/gallery/brian.jpg",
+    "body": "",
     "img2": "https://brmdev.com/blog/assets/brian/brian.jpg",
     "img1": "https://brmdev.com/blog/assets/brian/brian-heather.jpg",
     "project": "las-vegas"
   },
+    {
+      "purpose": "blog",
+      "category": "Las Vegas",
+      "title": "Donut day with Dad",
+      "date": "March 4, 2023",
+      "author": "Brian McGee",
+      "avatar": "https://www.brmcontractors.net/blog/assets/gallery/brian.jpg",
+      "body": "",
+      "img2": "https://brmdev.com/blog/assets/brian/brian-russ-donut.jpg",
+      "img1": "https://brmdev.com/blog/assets/brian/brian-russ-donut2.jpg",
+      "project": "brian-russ"
+    },
   {
     "purpose": "blog",
     "category": "Las Vegas",
@@ -18,7 +30,7 @@
     "date": "March 4, 2023",
     "author": "Heather McGee",
     "avatar": "https://www.brmcontractors.net/blog/assets/gallery/heather.jpg",
-    "body": "The beautiful weather is coming and what more to enjoy it on the beautiful new deck by BRM. Need a new bathroom, we can help. Bathroom remodel and general home repair. Call or connect today for a free estimate!",
+    "body": "",
     "img2": "https://brmdev.com/blog/assets/brian/brian-heather3.jpg",
     "img1": "https://brmdev.com/blog/assets/brian/brian-heather2.jpg",
     "project": "las-vegas"
@@ -29,22 +41,10 @@
       "title": "Las Vegas Vacation",
       "date": "March 4, 2023",
       "author": "Brian McGee",
-      "avatar": "https://www.brmcontractors.net/blog/assets/gallery/heather.jpg",
-      "body": "The beautiful weather is coming and what more to enjoy it on the beautiful new deck by BRM. Need a new bathroom, we can help. Bathroom remodel and general home repair. Call or connect today for a free estimate!",
+      "avatar": "https://www.brmcontractors.net/blog/assets/gallery/brian.jpg",
+      "body": "",
       "img2": "https://brmdev.com/blog/assets/brian/brian-heather5.jpg",
       "img1": "https://brmdev.com/blog/assets/brian/brian-heather4.jpg",
       "project": "las-vegas"
-    },
-    {
-      "purpose": "blog",
-      "category": "Las Vegas",
-      "title": "Donut day with Dad",
-      "date": "March 4, 2023",
-      "author": "Brian McGee",
-      "avatar": "https://www.brmcontractors.net/blog/assets/gallery/heather.jpg",
-      "body": "The beautiful weather is coming and what more to enjoy it on the beautiful new deck by BRM. Need a new bathroom, we can help. Bathroom remodel and general home repair. Call or connect today for a free estimate!",
-      "img2": "https://brmdev.com/blog/assets/brian/brian-russ-donut.jpg",
-      "img1": "https://brmdev.com/blog/assets/brian/brian-russ-donut2.jpg",
-      "project": "brian-russ"
     }
   ]
