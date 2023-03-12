@@ -253,18 +253,18 @@ async function renderBlogs(active) {
           
           let htmlSegment = `
           
-          <div class="col-lg-6 mx-auto d-block mt-2" style="height:60vh;min-width:60%;">
+          <div class="col-lg-6 mx-auto d-block mt-2" style="height:70vh;min-width:65%;">
           <div class="p-1 card-overlay card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-l" 
-          style="background: linear-gradient(rgba(19, 16, 34, 0.58) 0%, rgba(19, 16, 34, 0.78) 100%) 0% 0% / cover, 
+          style="background: linear-gradient(rgba(19, 16, 34, 0.48) 0%, rgba(19, 16, 34, 0.88) 100%) 0% 0% / cover, 
           url(${blog.img1}) center center no-repeat;background-size: cover;">
             <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
               <div class="lc-block pt-5 mt-5 mb-4">
-              <h1 class="h1 text-uppercase btn-main text-center btn-rounded mt-2 " style="position: relative; top: 2px; color: white;overflow:hidden;min-width:25%;width:30%;">${blog.category}</h1>
+              <h1 class="text-uppercase btn-main text-center btn-rounded bg-secondary mt-2" style="font-size:32px;color:white;width:400px;min-width:auto;">${blog.category}</h1>
                 <h2 class="display-6 fw-bold">${blog.title}</h2>
                 <p>${blog.body}</p>
               </div>
               <ul class="d-flex list-unstyled mt-auto ms-auto">
-                <a class="btn btn-link btn-sm text-white" href="${blog.img2}" role="button">${blog.author}</a>
+                <a class="btn btn-link btn-sm text-white" href="" role="button">${blog.author}</a>
                 <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" class="float-start ms-5" style="height: 50px;border-radius:50px;width:80px;height:80px;">
               </ul>
             </div>

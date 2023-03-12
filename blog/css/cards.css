@@ -365,6 +365,7 @@
   justify-content: space-around;
   padding: 35px 15px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 @media screen and (min-width:1380px) {
@@ -379,6 +380,7 @@
   width: 415px;
   margin-bottom: 35px;
   max-width: 100%;
+  
 }
 
 .flip-box {
@@ -573,18 +575,17 @@
 }
 .card-res .card-avatar {
   width:220px;
-  height:220px;
-  border-radius: 50%;
+  height:190px;
   color:#fff;
   margin:0 auto auto 5vw;
   margin-left: auto;
   position: relative;
-  top: -105px;
+  top: -90px;
   right: -60px;
 }
 .card-res .card-avatar img {
   width:220px;
-  height:220px;
+  height:190px;
 }
 
 
