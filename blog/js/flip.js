@@ -345,6 +345,13 @@ function renderLength(){
     return blogs;
 }
 
+function randomBlog(){
+  let random = Math.floor(Math.random() * length);
+  renderBlogs(random);
+}
+
+
+
 //create blog at index i
 let activeIndex = 0;
 function blog(i) {

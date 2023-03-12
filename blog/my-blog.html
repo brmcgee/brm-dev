@@ -31,7 +31,7 @@
 <script src="https://kit.fontawesome.com/8ab1cf7876.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://kit.fontawesome.com/8ab1cf7876.css" crossorigin="anonymous"> 
 
-
+<link rel="stylesheet" href="css/cards.css">
 
 </head>
 <body>
@@ -84,7 +84,7 @@
        
            <div class="button-group">
                <button onclick="renderUrl(), blog(39)" class="btn-main">#39</button>
-               <button onclick="renderUrl(), blog(7)" class="btn-main">#7</button>
+               <button onclick="renderUrl(), randomBlog()" class="btn-main">Random</button>
                <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main btn-black">Submit</button>    
                <button id="btnPrev" class="btn-main">Prev</button>
                <button id="btnNext" class="btn-main">Next</button>
@@ -97,6 +97,6 @@
 </div>    
 
 
-  <script src="js/blog-fetch.js"></script>
+  <script src="js/fetch-single.js"></script>
 </body>
 </html>
