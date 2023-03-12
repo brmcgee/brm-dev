@@ -345,9 +345,6 @@
 
 
 /* flip  */
-html {
-  box-sizing: border-box;
-}
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -619,8 +616,8 @@ html {
 .product-header h2 {
     background-color: rgb(163, 30, 30);
     border-radius: 50px;
-    font-size: 34px;
-    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
     margin: 5px 0 5px 0;
     display: inline-block;
     text-transform: uppercase;
