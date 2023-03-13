@@ -59,6 +59,29 @@
         border: 2px solid #202020;
     }
 /* reg  */
+
+/* FADE  */
+
+  .team-item img {
+    transition: .5s;
+}
+
+.team-item:hover img {
+    transform: scale(1.1);
+    filter: blur(2px)
+}
+
+.team-item .team-overlay {
+    transition: .5s;
+    opacity: 0;
+}
+
+.team-item:hover .team-overlay {
+    opacity: 1;
+}
+
+
+
 /* ======== SERVICES CARD ======== */ 
 
 .service .card {

@@ -154,30 +154,32 @@ async function renderBlogs(active) {
         container.innerHTML = html;
         return
     } 
-    else if (active === "flip") {
+    else if (active === "fade") {
       blogs.forEach(blog => {       
         let htmlSegment = `
-        <div class="box-item1">
-        <div class="flip-box  col-sm-12 col-md-6  mx-auto d-block">
-          <div class="flip-box-front text-center" style="background-image: url('${blog.img2}');">
-            <div class="inner color-white">
-              <h2 class="flip-box-header text-uppercase">${blog.category}</h2>
-              <p>${blog.title}</p>
-              <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" style="width:50px;height:50px;" alt="" class="flip-box-img">
-            </div>
-          </div>
-          <div class="flip-box-back text-center" style="background-image: url('${blog.img1}');overflow:hidden">
-            <div class="inner color-white">
-            <h4>${blog.title}</h4>
-            <p>${blog.body}</p>
-            <small><span> <img src="${blog.avatar}" style="width:50px;height:50px;border-radius:50px;" alt="" class="flip-box-img"></span></small>
-            <small>${blog.date}</small>
 
-              
-              <button class="btn-main">${blog.author}</button>
+        <div class="col-lg-4 col-md-6">
+        <div class="team-item">
+            <div class="position-relative overflow-hidden">
+                <img class="img-fluid w-100" src="${blog.img1}" alt="">
+                <div class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center justify-content-start">
+                        <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    </div>
+                    
+                </div>
             </div>
-          </div>
-        </div>  <br> `;   
+            <div class="bg-dark border-inner text-center p-4">
+                <h4 class="text-uppercase ">${blog.category}</h4>
+                <p class="text-white m-0">${blog.title}</p>
+            </div>
+        </div>
+    </div>
+
+        
+        `;   
 
         //filter categories
         let filter = blog.project.toLowerCase();
