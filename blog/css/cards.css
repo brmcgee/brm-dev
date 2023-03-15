@@ -38,9 +38,11 @@
         width: 200px;
         font-size: 18px;
     }
+    .url-source,
     .category-source,
     .url-source,
-    .author-source
+    .author-source,
+    .project-source
 
     {
        display: grid;
