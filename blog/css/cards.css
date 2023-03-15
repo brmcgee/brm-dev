@@ -41,10 +41,22 @@
     .category-source,
     .url-source,
     .author-source
+
     {
        display: grid;
-       grid-template-columns: 2fr 2fr .2fr;
+       grid-template-columns: 2fr 3fr .2fr;
        gap: 10px;
+    }
+    .title-source {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .title-source #title-data option {
+      width: 300px;
+    }
+    .title-source #title-data select {
+      max-width: 310px;
     }
     .btn-main {
         background-color: rgb(163,30,30);
