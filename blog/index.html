@@ -44,6 +44,8 @@
         renderUrl();
         renderUrl("all")
     })
+
+
 </script>
 
 
@@ -92,6 +94,7 @@
                      <option value="https://brmdev.com/blog/random-data.json">Aux</option>
                      <option value="https://brmdev.com/blog/js/master_data/brian.json">McGee</option>
                      <option value="https://brmdev.com/blog/js/master_data/dummy-data.json">DD</option>
+
                    </select>
                </div>
    
@@ -113,16 +116,28 @@
                  </select>
                </div>
                <br>
+
                <div class="author-source">
                  <label for="authorData">Author:</label>
                  <select id="authorData" name="authorData">
-                   <option value="all">All</option>
+                   <!-- <option value="all">All</option>
                    <option value="Brian McGee">Brian McGee</option>
                    <option value="Heather McGee">Heather McGee</option>
+                   <option value="Lanie Walker">Lanie Walker</option>
                    <option value="Carey Radin">Carey Radin</option>
-                   <option value="Marve Chominski">Marve Chominski</option>
+                   <option value="Marve Chominski">Marve Chominski</option> -->
                  </select>
                </div>
+               <br>
+
+               <div class="title-source">
+                 <label for="titleData">Title:</label>
+                 <select id="titleData" name="authorData" style="width: 100%;">
+                   <!-- <option value="all">All</option> -->
+                 </select>
+               </div>
+              
+              </div>
            
                <div class="button-group">
                    <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main btn-black" data-bs-dismiss="offcanvas" aria-label="Close">Submit</button>    

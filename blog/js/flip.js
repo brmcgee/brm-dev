@@ -16,9 +16,33 @@ async function renderBlogs(active) {
     let blogs = await getBlogs();
     let html = '';
     length = blogs.length;
+    
+    let options = document.querySelectorAll('.title-option')
+    if (options.length < 1) {
+      fetchTitles(blogs);
+    }
+
+    let authors = document.querySelectorAll('.author-option')
+    if (authors.length < 1) {
+      fetchAuthor(blogs);
+    }
+
+    // let category = document.querySelectorAll('.cat-option')
+    // console.log(category)
+    // if (category.length < 1) {
+    //   fetchCategory(blogs);
+    // }
+
+    // } else {
+    //   options.forEach(i => {
+    //     document.getElementById('titleData').removeChild(i)
+    //   })
+    //   fetchTitles(blogs);
+    // }
+
    
     if (active === "all") {
-            
+      // filters 
         blogs.forEach(blog => {
           
           let htmlSegment = `
@@ -52,10 +76,16 @@ async function renderBlogs(active) {
           let author = document.getElementById("authorData").value;
           let aFiltered = blog.author;
           if (aFiltered === author) { html += htmlSegment;}
-  
-          if (author === "all" && cat === "all") {
+
+          
+          let title = document.getElementById("titleData").value;
+          let tFiltered = blog.title;
+          if (tFiltered === title) { html += htmlSegment;}
+            
+          if (author === "all" && cat === "all" && title === "all") {
             html += htmlSegment;
           }
+
         });
         let container = document.querySelector('.blog-cards');
         container.innerHTML = html;
@@ -334,7 +364,9 @@ async function renderBlogs(active) {
     singleCount = 0;
     totalQuery.innerHTML = renderLength().length;
     totalQuery.style.fontSize = "16px";
+    
 }
+
 
 // renderBlogs();
 function renderUrl () {
@@ -351,6 +383,84 @@ function randomBlog(){
   let random = Math.floor(Math.random() * length);
   renderBlogs(random);
 }
+
+
+
+document.getElementById("urlData").addEventListener("change", () => {
+
+  let allTitles = document.querySelectorAll('.title-option');
+  allTitles.forEach(i => {
+    document.getElementById("titleData").removeChild(i);
+  });
+
+  let allAuthors = document.querySelectorAll('.author-option');
+  allAuthors.forEach(i => {
+    document.getElementById("authorData").removeChild(i)
+  });
+  let allCategory = document.querySelectorAll('.cat-option');
+  allCategory.forEach(i => {
+    document.getElementById("catData").removeChild(i)
+  });
+  getBlogs();
+  renderUrl();
+});
+
+
+//render titles at sidenav
+function fetchTitles(blogs){
+  
+  let titles = document.getElementById("titleData");
+  let blogOption = document.createElement("option");
+   
+  blogOption.innerHTML = 'All';
+  blogOption.value = "all";
+  blogOption.className = "title-option";
+  titles.appendChild(blogOption);
+
+  blogs.forEach((blog, i) => {
+    let blogOption = document.createElement("option");
+    blogOption.innerHTML = i + ". " + blog.title;
+    blogOption.value = blog.title;
+    blogOption.className = "title-option";
+    titles.appendChild(blogOption);
+  });
+};
+
+//render author at sidenav
+function fetchAuthor(blogs){
+  let authors = document.getElementById("authorData");
+  let authOption = document.createElement("option");
+  authOption.innerHTML = 'All';
+  authOption.value = "all";
+  authOption.className = "author-option";
+  authors.appendChild(authOption);
+
+  blogs.forEach((blog, i) => {
+    let options = document.createElement("option");
+    options.innerHTML = i + ". " + blog.author;
+    options.value = blog.author;
+    options.className = "author-option";
+    authors.appendChild(options);
+  });
+};
+
+//render author at sidenav
+// function fetchCategory(blogs){
+//   let category = document.getElementById("catData");
+//   let catOption = document.createElement("option");
+//   catOption.innerHTML = 'All';
+//   catOption.value = "all";
+//   catOption.className = "cat-option";
+//   category.appendChild(catOption);
+
+//   blogs.forEach((blog, i) => {
+//     let options = document.createElement("option");
+//     options.innerHTML = i + ". " + blog.category;
+//     options.value = blog.category;
+//     options.className = "cat-option";
+//     category.appendChild(options);
+//   });
+// };
 
 
 
