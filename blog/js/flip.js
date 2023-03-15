@@ -45,24 +45,31 @@ async function renderBlogs(active) {
       // filters 
         blogs.forEach(blog => {
           
+          // initial 
           let htmlSegment = `
   
-          <div class="card-res">
-          <div class="card-image">
-            <img src="${blog.img1}">
+          <div class="service col-sm-12 col-xl-4 col-md-7 mx-auto d-block">
+          <div class="card mx-auto d-block" id="blogCard" style="height:auto;box-sizing:border-box;">
+            <div class="card-img img-fluid">
+              <img src="${blog.img2}">
+              <img src="${blog.img1}">
+            </div>
+            <div class="card-price">
+              <p style="font-size:calc(1rem + .5vw);">${blog.category}</p>
+            </div>
+            <div class="card-body">
+              <h4 style="font-size:calc(1rem + .5vw)";>${blog.title}</h4>
+              <p style="font-size:calc(14px + .1vw);">${blog.body}</p>
+            </div>
+            <div class="card-user bg-secondary pt-2 pb-2">
+              <img src="${blog.avatar}" style="width:70px;height:70px;border:1px solid #333;">
+              <div class="user-info">
+                <h5 class="text-dark fw-bold pt-3">${blog.author}</h5>
+                <small class="fw-bold"">${blog.date}</small>
+              </div>
+            </div>
           </div>
-          <div class="card-text">
-            <p class="card-meal-type">${blog.category}</p>
-            <h2 class="card-title">${blog.title}</h2>
-            <p class="card-body">${blog.body}</p>
-            <p class="card-body">${blog.author}<span class="ms-3"><small class="text-secondary">${blog.date}</small></span></p>
-            <div class="card-price"><img src="${blog.avatar}"></div>
-
-            <p class="card-body"></p>
-
-          </div>
-          <div class="card-avatar"><img src="${blog.img2}"></div>
-          </div>    
+        </div>    
           
           `;   
   
@@ -194,15 +201,15 @@ async function renderBlogs(active) {
                 <img class="img-fluid w-100" src="${blog.img1}" alt="">
                 <div class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
                     <div class="d-flex align-items-center justify-content-start">
-                        <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-lg btn-warning btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                        <a class="btn btn-lg btn-warning btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                        <a class="btn btn-lg btn-warning btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
                     </div>
                     
                 </div>
             </div>
             <div class="bg-dark border-inner text-center p-4">
-                <h4 class="text-uppercase ">${blog.category}</h4>
+                <h4 class="text-uppercase text-light fw-strong display-6 text-roboto">${blog.category}</h4>
                 <p class="text-white m-0">${blog.title}</p>
             </div>
         </div>
