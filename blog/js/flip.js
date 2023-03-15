@@ -27,11 +27,16 @@ async function renderBlogs(active) {
       fetchAuthor(blogs);
     }
 
-    // let category = document.querySelectorAll('.cat-option')
-    // console.log(category)
-    // if (category.length < 1) {
-    //   fetchCategory(blogs);
-    // }
+    let category = document.querySelectorAll('.cat-option')
+    if (category.length < 1) {
+      fetchCategory(blogs);
+    }
+
+    let project = document.querySelectorAll('.project-option')
+    if (project.length < 1) {
+      fetchProject(blogs);
+    }
+
 
     // } else {
     //   options.forEach(i => {
@@ -74,22 +79,27 @@ async function renderBlogs(active) {
           `;   
   
           //filter categories
-          let filter = blog.project.toLowerCase();
+          let filter = blog.category.toLowerCase();
           let cat = document.getElementById("catData").value;
-          if (filter === cat) { html += htmlSegment; }
-          // if (cat === "all") { html += htmlSegment; }
+          if (filter.toLowerCase() === cat.toLowerCase()) { html += htmlSegment; }
     
           // filter card type 
           let author = document.getElementById("authorData").value;
           let aFiltered = blog.author;
-          if (aFiltered === author) { html += htmlSegment;}
+          if (aFiltered.toLowerCase() === author.toLowerCase()) { html += htmlSegment;}
 
-          
+          //filter title
           let title = document.getElementById("titleData").value;
           let tFiltered = blog.title;
-          if (tFiltered === title) { html += htmlSegment;}
-            
-          if (author === "all" && cat === "all" && title === "all") {
+          if (tFiltered.toLowerCase() === title.toLowerCase()) { html += htmlSegment;}
+
+          //filter project
+          let project = document.getElementById("projectData").value;
+          let pFiltered = blog.project;
+          if (pFiltered.toLowerCase() === project.toLowerCase()) { html += htmlSegment;}
+
+
+          if (author === "all" && cat === "all" && title === "all" && project === "all") {
             html += htmlSegment;
           }
 
@@ -336,26 +346,30 @@ async function renderBlogs(active) {
           if (singleCount++ === index) {
             
             let segment = `
-            <div class="blog-wide col-xl-10 col-md-10 col-sm-12 mx-auto d-block">
+            <div class="mt-2 blog-wide col-xl-12 col-md-12 col-sm-12 mx-auto d-block pt-5">
             <div class="card mx-auto d-block" id="blogCard">
                 <div class="card-img img-fluid">
-                    <img src="${blogs[index].img2}">
-                    <img src="${blogs[index].img1}">
+                    <img src="${blogs[index].img2}" class="img-fluid">
+                    <img src="${blogs[index].img1}" class="img-fluid">
                 </div>
                 <div class="card-price">
-                    <p>${blogs[index].category}</p>
+                    <p style="font-size: calc(1rem + 1.32vw)">${blogs[index].category}</p>
                 </div><div class="card-body">
-                    <h4 class="">${blogs[index].title}</h4>
-                    <p>${blogs[index].body}</p>
+                    <h4 style="font-size: calc(1rem + .75vw);">${blogs[index].title}</h4>
+                    <p style="font-size: calc(1rem + .5vw);">${blogs[index].body}</p>
                 </div>
-                <div class="card-user"><img src="${blogs[Number(active)].avatar}">
+                <div class="card-user pb-2"><img src="${blogs[Number(active)].avatar}" class=" bg-warning">
                     <div class="user-info">
                         <h5>${blogs[index].author}</h5>
                         <small>${blogs[index].date}</small>
                         <div>
                     </div>
                 </div>
-                <p class="ms-5 pt-1 small color-dark">${blogs[index].project}</p>
+                <p class="ms-3 pt-1 small color-dark">${blogs[index].project}</p>
+                <p class="pt-1 small color-dark">${blogs[index].purpose}
+                  <span class="pt-1 small color-dark">#${index}</span>
+                </p>
+                
             </div>
           </div>
           </div>   `;
@@ -375,26 +389,20 @@ async function renderBlogs(active) {
 }
 
 
-// renderBlogs();
+// get JSON URL renderBlogs();
 function renderUrl () {
   url = document.getElementById("urlData").value;
   renderBlogs('all');
 }
 
-function renderLength(){
-    let blogs = document.querySelectorAll(".card-res");
-    return blogs;
-}
-
+// generate random blog 
 function randomBlog(){
   let random = Math.floor(Math.random() * length);
   renderBlogs(random);
 }
 
-
-
+// on menu selection database change
 document.getElementById("urlData").addEventListener("change", () => {
-
   let allTitles = document.querySelectorAll('.title-option');
   allTitles.forEach(i => {
     document.getElementById("titleData").removeChild(i);
@@ -404,10 +412,17 @@ document.getElementById("urlData").addEventListener("change", () => {
   allAuthors.forEach(i => {
     document.getElementById("authorData").removeChild(i)
   });
+
   let allCategory = document.querySelectorAll('.cat-option');
   allCategory.forEach(i => {
     document.getElementById("catData").removeChild(i)
   });
+
+  let allProject = document.querySelectorAll('.project-option');
+  allProject.forEach(i => {
+    document.getElementById("projectData").removeChild(i)
+  });
+
   getBlogs();
   renderUrl();
 });
@@ -433,45 +448,76 @@ function fetchTitles(blogs){
   });
 };
 
-//render author at sidenav
+//render author values at sidenav
 function fetchAuthor(blogs){
+  let all = ['all'];
   let authors = document.getElementById("authorData");
   let authOption = document.createElement("option");
-  authOption.innerHTML = 'All';
-  authOption.value = "all";
-  authOption.className = "author-option";
-  authors.appendChild(authOption);
 
+  // build array without duplicate author 
   blogs.forEach((blog, i) => {
+    if (all.indexOf(blog.author) < 0) {
+      all.push(blog.author);
+    }
+  });
+
+  // push array to select options menu author
+  all.forEach(i => {
     let options = document.createElement("option");
-    options.innerHTML = i + ". " + blog.author;
-    options.value = blog.author;
+    options.innerHTML = i;
+    options.value = i;
     options.className = "author-option";
     authors.appendChild(options);
+  })
+};
+
+// render category at sidenav
+function fetchCategory(blogs){
+  let all = ['all'];
+  let category = document.getElementById("catData");
+  let catOption = document.createElement("option");
+
+  // build array without duplicate author 
+  blogs.forEach((blog, i) => {
+    // console.log(all.indexOf('all'))
+    if (all.indexOf(blog.category) < 0) {
+      all.push(blog.category);
+    }
+  });
+
+  all.forEach((i) => {
+    let options = document.createElement("option");
+    options.innerHTML = i;
+    options.value = i;
+    options.className = "cat-option";
+    category.appendChild(options);
   });
 };
 
-//render author at sidenav
-// function fetchCategory(blogs){
-//   let category = document.getElementById("catData");
-//   let catOption = document.createElement("option");
-//   catOption.innerHTML = 'All';
-//   catOption.value = "all";
-//   catOption.className = "cat-option";
-//   category.appendChild(catOption);
+// render project at sidenav
+function fetchProject(blogs){
+  let all = ['all'];
+  let project = document.getElementById("projectData");
+  let projectOption = document.createElement("option");
+  
+  // build array without duplicate author 
+  blogs.forEach((blog, i) => {
+    console.log(all.indexOf('all'))
+    if (all.indexOf(blog.project) < 0) {
+      all.push(blog.project);
+    }
+  });
 
-//   blogs.forEach((blog, i) => {
-//     let options = document.createElement("option");
-//     options.innerHTML = i + ". " + blog.category;
-//     options.value = blog.category;
-//     options.className = "cat-option";
-//     category.appendChild(options);
-//   });
-// };
+  all.forEach((i) => {
+    let options = document.createElement("option");
+    options.innerHTML = i;
+    options.value = i.toLowerCase();
+    options.className = "project-option";
+    project.appendChild(options);
+  });
+};
 
-
-
-//create blog at index i
+// create blog at index i
 let activeIndex = 0;
 function blog(i) {
   renderBlogs(i);
