@@ -45,7 +45,7 @@ async function renderBlogs(active) {
     //   fetchTitles(blogs);
     // }
 
-   
+      // MAIN run all selections
     if (active === "all") {
       // filters 
         blogs.forEach(blog => {
@@ -53,17 +53,17 @@ async function renderBlogs(active) {
           // initial 
           let htmlSegment = `
   
-          <div class="service col-sm-12 col-xl-4 col-md-7 mx-auto d-block">
+          <div class="service col-sm-12 col-xl-5 col-md-9 mx-auto d-block">
           <div class="card mx-auto d-block" id="blogCard" style="height:auto;box-sizing:border-box;">
             <div class="card-img img-fluid">
-              <img src="${blog.img2}">
-              <img src="${blog.img1}">
+              <img src="${blog.img2}" style="height:calc(220px + 10vw);">
+              <img src="${blog.img1}" style="height:calc(220px + 10vw);">
             </div>
             <div class="card-price">
               <p style="font-size:calc(1rem + .5vw);">${blog.category}</p>
             </div>
             <div class="card-body">
-              <h4 style="font-size:calc(1rem + .5vw)";>${blog.title}</h4>
+              <h4 style="font-size:calc(.9rem + .4vw)";>${blog.title}</h4>
               <p style="font-size:calc(14px + .1vw);">${blog.body}</p>
             </div>
             <div class="card-user bg-secondary pt-2 pb-2">
@@ -106,6 +106,7 @@ async function renderBlogs(active) {
         });
         let container = document.querySelector('.blog-cards');
         container.innerHTML = html;
+        clearSource();
         return
     } 
     else if (active === "standard") {
@@ -412,6 +413,7 @@ async function renderBlogs(active) {
 
 
     }
+    // selector next/prev
     else {
         blogs.forEach((blog) => {
           let index = Number(active);
@@ -455,9 +457,6 @@ async function renderBlogs(active) {
     }
 
     singleCount = 0;
-    totalQuery.innerHTML = renderLength().length;
-    totalQuery.style.fontSize = "16px";
-    
 }
 
 
@@ -482,17 +481,17 @@ document.getElementById("urlData").addEventListener("change", () => {
 
   let allAuthors = document.querySelectorAll('.author-option');
   allAuthors.forEach(i => {
-    document.getElementById("authorData").removeChild(i)
+    document.getElementById("authorData").removeChild(i);
   });
 
   let allCategory = document.querySelectorAll('.cat-option');
   allCategory.forEach(i => {
-    document.getElementById("catData").removeChild(i)
+    document.getElementById("catData").removeChild(i);
   });
 
   let allProject = document.querySelectorAll('.project-option');
   allProject.forEach(i => {
-    document.getElementById("projectData").removeChild(i)
+    document.getElementById("projectData").removeChild(i);
   });
 
   getBlogs();
@@ -574,7 +573,6 @@ function fetchProject(blogs){
   
   // build array without duplicate author 
   blogs.forEach((blog, i) => {
-    console.log(all.indexOf('all'))
     if (all.indexOf(blog.project) < 0) {
       all.push(blog.project);
     }
@@ -588,6 +586,14 @@ function fetchProject(blogs){
     project.appendChild(options);
   });
 };
+
+// clear menu source 
+function clearSource() {
+  document.getElementById("catData").value = 'all';
+  document.getElementById("projectData").value = 'all';
+  document.getElementById("authorData").value = 'all';
+  document.getElementById("titleData").value = 'all';
+}
 
 // create blog at index i
 let activeIndex = 0;
