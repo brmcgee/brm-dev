@@ -363,32 +363,38 @@ async function renderBlogs(active) {
         <table class='table table-bordered table-striped'>
          <tbody id="tableBody">
           <tr>
+            <td>id</td>
+            <td>isHero</td>
             <td>purpose</td>
             <td>category</td>
             <td>date</td>
             <td>author</td>
-       <!--     <td>avatar</td>  -->
+            <td>avatar</td>
+            <td>project</td>
             <td>title</td>
             <td>body</td>
-       <!--     <td>img1</td> -->
-       <!--    <td>img2</td> -->
-            <td>project</td>
+            <td>img1</td>
+            <td>img2</td>
+            <td>link</td>
           </tr>
       `;
           blogs.forEach(i => {
 
             tableHtml += `
         <tr>
+          <td>${i.id}</td>
+          <td>${i.isHero}</td>
           <td>${i.purpose}</td>
           <td>${i.category}</td>
           <td>${i.date}</td>
           <td>${i.author}</td>
-      <!--    <td>${i.avatar}</td>  -->
+          <td><img src="${i.avatar}" style="width:50px;height:50px;border-radius:50%;"></td> 
+          <td>${i.project}</td>
           <td>${i.title}</td>
           <td>${i.body}</td>
-      <!--   <td>${i.img1}</td>  -->
-      <!--   <td>${i.img2}</td>  -->
-          <td>${i.project}</td>
+          <td><img src="${i.img1}" style="width:90px;height:90px"></td>
+          <td><img src="${i.img2}" style="width:90px;height:90px"></td>
+          <td><a href="#blogs"><button onclick="renderBlogs(${i.id})">View</button></a></td>
         </tr>  `;
       });
       
