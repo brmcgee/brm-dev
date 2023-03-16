@@ -42,18 +42,19 @@
     .category-source,
     .url-source,
     .author-source,
-    .project-source
+    .project-source,
+    .title-source
 
     {
        display: grid;
        grid-template-columns: 2fr 3fr .2fr;
        gap: 10px;
     }
-    .title-source {
+    /* .title-source {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-    }
+    } */
     .title-source #title-data option {
       width: 300px;
     }

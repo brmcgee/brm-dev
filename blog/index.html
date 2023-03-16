@@ -48,21 +48,22 @@
 
 </script>
 
-
+<!-- buttons  -->
   <div class="row">
-
-    <div class="col-lg-4  mx-auto d-block p-1">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3  mx-auto d-block p-1">
         <div class="btn-group ms-3">
             <button class="btn btn-danger btn-main" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Menu</button>
             <button id="btnPrev" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Prev">Prev</button>
+            <input type="text" id="passW" style="width: 80px;">
             <button id="btnNext" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Next">Next</button>
-            <input type="text" id="passW" style="width: 120px;">
+
 
         </div>
     </div>
-    <div class="col-lg-4 mx-auto d-block p-1">
+    <div class="col-lg-5 mx-auto d-flex p-1">
       <div class="btn-group ms-3">
-        <button id="btnReg" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('reg')">Reg</button>
+        <!-- <button id="btnReg" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('reg')">Reg</button> -->
         <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('fade')">Fade</button>
         <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('dark')">Dark</button> 
         <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('overlay')">Overlay</button>
@@ -74,7 +75,7 @@
   </div>
 
 
-
+<!-- sidenav  -->
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasScrollingLabel">BRM Blog Data Welcome</h5>
@@ -94,13 +95,21 @@
                 <label for="urlData">Data JSON</label>
                 <select id="urlData" name="urlData">
                   <option value="https://www.brmcontractors.net/assets/data/brm.json">BRM</option>
-                  <option value="https://brmdev.com/blog/random-data.json">Aux</option>
+                  <option value="https://brmdev.com/blog/random-data.json">ET</option>
                   <option value="https://brmdev.com/blog/js/master_data/brian.json">McGee</option>
-                  <option value="https://brmdev.com/blog/js/master_data/dummy-data.json">DD</option>
+                  <option value="https://brmdev.com/blog/js/master_data/dummy-data.json">Planes</option>
                 </select>
                </div>
                <br>
-   
+
+               <div class="title-source">
+                <label for="titleData">Title:</label>
+                <select id="titleData" name="authorData">
+                  <!-- <option value="all">All</option> -->
+                </select>
+              </div>  
+              <br>
+
                <div class="category-source">
                  <label for="catData">Category:</label>
                  <select id="catData" name="catData">
@@ -125,12 +134,7 @@
                </div>
                <br>
 
-               <div class="title-source">
-                 <label for="titleData">Title:</label>
-                 <select id="titleData" name="authorData" style="width: 100%;">
-                   <!-- <option value="all">All</option> -->
-                 </select>
-               </div>             
+           
             </div>
            
             <div class="button-group">
@@ -138,7 +142,10 @@
             </div>
         </div>
       </div>
-    </div>
+  </div>
+
+
+
   </div>
 
   <!-- table insert  -->
