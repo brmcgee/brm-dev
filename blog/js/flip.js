@@ -254,13 +254,13 @@ async function renderBlogs(active) {
           
           let htmlSegment = `
   
-          <div class="col-md-6 col-xl-4">
-            <div class="card mx-auto d-block blog-item m-3" style="width: 390px;">
+          <div class="col-md-6 col-xl-4 g-10">
+            <div class="card mx-auto d-block blog-item m-3" style="min-width: 390px; width:100%">
               <div class="rounded-top">
-                <img class="img-fluid" src="${blog.img1}" style="width: 390px; height: 300px; object-fit: cover;"> 
+                <img class="img-fluid" src="${blog.img1}" style="min-width: 390px; width:100% height: 300px; object-fit: cover;"> 
               </div>
               <div class="product-header display-4 color-red text-russo">
-                <h2 class="p-3 h4 text-uppercase bg-red btn-rounded ms-2 mt-2 py-1 px-3" style="position: absolute; top: 1px; color: white;">${blog.category}</h2>
+                <h2 class="p-3 h5 text-uppercase bg-red btn-rounded ms-2 mt-2 py-1 px-3" style="position: absolute; top: 1px; color: white;">${blog.category}</h2>
               </div>
               <div class="bg-dark d-flex-column align-items-center p-4 p-1">
                 <h4 class="fs-5 text-uppercase text-light me-3 d-flex">${blog.title}
@@ -269,9 +269,9 @@ async function renderBlogs(active) {
                 <p class="text-light text-roboto lead">${blog.body}</p>
               </div><div class="card-user">
               <div class="user-info bg-dark">
-                <img src="${blog.avatar}" class="p-2"style="width:60px;height:60px;border-radius:50px;>
+                <img src="${blog.avatar}" class="ms-3 mb-3 p-2"style="width:60px;height:60px;border-radius:50px;>
                 <a class="text-light text-roboto ps-5 mb-0 pb-0"><span class="text-light ms-3">${blog.author}</span></a>
-                <small class="text-roboto ps-5 small mt-0 pt-0 pb-2 text-light">${blog.date}</small>
+                <small class="text-roboto ps-5 small mt-0 pt-0 pb-2 text-secondary">${blog.date}</small>
               </div>
             </div>
           </div>
@@ -611,7 +611,7 @@ let next = document.getElementById("btnNext");
 let prev = document.getElementById("btnPrev");
 
 next.addEventListener("click", () => {
-  renderUrl();
+  // renderUrl();
   if (activeIndex >= length -1) {
     activeIndex = 0;
   }
@@ -620,7 +620,7 @@ next.addEventListener("click", () => {
 });
 
 prev.addEventListener("click", () => {
-  renderUrl();
+  // renderUrl();
   if (activeIndex <= 0) {
     activeIndex = length;
   }
