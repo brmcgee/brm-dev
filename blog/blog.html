@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>BRM Landing</title>
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+
+        
+        <link href="https://www.brmcontractors.net/!template/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://www.brmcontractors.net/!template/red-block-bs.css">
+        <!-- <link rel="stylesheet" href="dark-bs.css"> -->
+        
+        <link rel="stylesheet" href="css/cards.css">
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                renderUrl();
+                renderUrl("all")
+            })
+        </script>
+        
+        <style>
+html, body {
+    /* prevent mobile scroll x  */
+    overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+        </style>
+    </head>
+    <body>
+        <div class="row">
+
+            <div class="col-lg-4  mx-auto d-block p-1">
+                <div class="btn-group ms-3">
+                    <button class="btn btn-danger btn-main" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Menu</button>
+                    <button id="btnPrev" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Prev">Prev</button>
+                    <button id="btnNext" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Next">Next</button>
+        
+        
+                </div>
+            </div>
+            <div class="col-lg-4 mx-auto d-block p-1">
+              <div class="btn-group ms-3">
+                <button id="btnReg" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('reg')">Reg</button>
+                <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('fade')">Fade</button>
+                <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('dark')">Dark</button> 
+                <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('overlay')">Overlay</button>
+                <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('standard')">Standard</button>        
+              </div>
+            </div>
+                  
+          </div>
+ <!-- off canvas  -->
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">BRM Blog Data Welcome</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+
+      <div class="wrapper">
+        <a class="btn-main btn btn-dark text-decoration-none mb-2"href="https://www.brmcontractors.net">BRM Contractors</a>
+
+          <div class="blog-head">
+          </div>
+          <div class="blog-controls">
+
+            <!-- data json selection  -->
+            <div class="url-source">
+              <label for="urlData">Data JSON</label>
+              <select id="urlData" name="urlData">
+                <option value="https://www.brmcontractors.net/assets/data/brm.json">BRM</option>
+                <option value="https://brmdev.com/blog/random-data.json">Aux</option>
+                <option value="https://brmdev.com/blog/js/master_data/brian.json">McGee</option>
+                <option value="https://brmdev.com/blog/js/master_data/dummy-data.json">DD</option>
+              </select>
+             </div>
+             <br>
+ 
+             <div class="category-source">
+               <label for="catData">Category:</label>
+               <select id="catData" name="catData">
+                 <!-- <option value="all">All</option> -->
+               </select>
+             </div>
+             <br>
+             
+             <div class="project-source">
+              <label for="projectData">Project:</label>
+              <select id="projectData" name="projectData">
+                <!-- <option value="all">All</option> -->
+              </select>
+            </div>
+            <br>
+
+             <div class="author-source">
+               <label for="authorData">Author:</label>
+               <select id="authorData" name="authorData">
+                 <!-- <option value="all">All</option> -->
+               </select>
+             </div>
+             <br>
+
+             <div class="title-source">
+               <label for="titleData">Title:</label>
+               <select id="titleData" name="authorData" style="width: 100%;">
+                 <!-- <option value="all">All</option> -->
+               </select>
+             </div>             
+          </div>
+         
+          <div class="button-group">
+            <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main btn-black" data-bs-dismiss="offcanvas" aria-label="Close">Submit</button>    
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- js insertion  -->
+<div class="row"> 
+  <div id="blogs" class="blog-cards row flip-container"></div>
+</div>
+
+
+
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Home
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-sm-2" type="search" placeholder="Search">
+                  <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    sidenav
+                  </button> 
+               </form>
+              </div>
+            </div>
+          </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <img src="https://www.brmcontractors.net/assets/logo/brm-phone.jpg" alt="brm" width="250px" style="opacity:.5;border-radius: 5px;;">
+                            <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
+                            <div class="col-auto"><button class="btn btn-primary btn-lg">Submit</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Icons Grid-->
+        <section class="features-icons bg-light text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                            <h3>Fully Responsive</h3>
+                            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                            <h3>Bootstrap 5 Ready</h3>
+                            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
+                            <h3>Easy to Use</h3>
+                            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+
+        <!-- Image Showcases-->
+        <section class="showcase">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://www.brmcontractors.net/assets/gallery/custom-deck6.jpg')"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Fully Responsive Design</h2>
+                        <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('https://www.brmcontractors.net/assets/gallery/sseam1.jpg')"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2>Updated For Bootstrap 5</h2>
+                        <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://www.brmcontractors.net/assets/gallery/--bg-bath.jpg');"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Easy to Use & Customize</h2>
+                        <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials-->
+        <section class="testimonials text-center bg-light">
+            <div class="container">
+                <h2 class="mb-5">What people are saying...</h2>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="https://www.brmcontractors.net/blog/assets/gallery/brian.jpg" alt="..." />
+                            <h5>Margaret E.</h5>
+                            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="https://www.brmcontractors.net/blog/assets/gallery/heather.jpg" alt="..." />
+                            <h5>Fred S.</h5>
+                            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="https://www.brmcontractors.net/blog/assets/gallery/brian.jpg" alt="..." />
+                            <h5>Sarah W.</h5>
+                            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to Action-->
+        <section class="call-to-action text-white text-center" id="signup">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+                     
+                        <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+                            <!-- Email address input-->
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
+                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
+                                </div>
+                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    <p>To activate this form, sign up at</p>
+                                    <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                        </ul>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-twitter fs-3 "></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+
+        <script src="js/flip.js"></script>
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://www.brmcontractors.net/js/scripts.js"></script>
+
+    </body>
+</html>

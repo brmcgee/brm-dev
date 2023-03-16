@@ -56,7 +56,7 @@
             <button class="btn btn-danger btn-main" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Menu</button>
             <button id="btnPrev" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Prev">Prev</button>
             <button id="btnNext" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Next">Next</button>
-
+            <input type="text" id="passW" style="width: 120px;">
 
         </div>
     </div>
@@ -66,7 +66,8 @@
         <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('fade')">Fade</button>
         <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('dark')">Dark</button> 
         <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('overlay')">Overlay</button>
-        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('standard')">Standard</button>        
+        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('standard')">Standard</button>
+        <a id="btnRes" href="#contentTable" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('table')">Table</a>        
       </div>
     </div>
           
@@ -88,6 +89,7 @@
             </div>
             <div class="blog-controls">
 
+              <!-- data json selection  -->
               <div class="url-source">
                 <label for="urlData">Data JSON</label>
                 <select id="urlData" name="urlData">
@@ -118,12 +120,7 @@
                <div class="author-source">
                  <label for="authorData">Author:</label>
                  <select id="authorData" name="authorData">
-                   <!-- <option value="all">All</option>
-                   <option value="Brian McGee">Brian McGee</option>
-                   <option value="Heather McGee">Heather McGee</option>
-                   <option value="Lanie Walker">Lanie Walker</option>
-                   <option value="Carey Radin">Carey Radin</option>
-                   <option value="Marve Chominski">Marve Chominski</option> -->
+                   <!-- <option value="all">All</option> -->
                  </select>
                </div>
                <br>
@@ -133,23 +130,26 @@
                  <select id="titleData" name="authorData" style="width: 100%;">
                    <!-- <option value="all">All</option> -->
                  </select>
-               </div>
-
-
-              
-              </div>
-           
-               <div class="button-group">
-                   <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main btn-black" data-bs-dismiss="offcanvas" aria-label="Close">Submit</button>    
-               </div>
+               </div>             
             </div>
+           
+            <div class="button-group">
+              <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main btn-black" data-bs-dismiss="offcanvas" aria-label="Close">Submit</button>    
+            </div>
+        </div>
       </div>
-      </div>
+    </div>
   </div>
 
+  <!-- table insert  -->
+  <div class="container-fluid" id="contentTable"></div>
+
+  <!-- js insertion  -->
   <div class="row"> 
     <div id="blogs" class="blog-cards row flip-container"></div>
   </div>
+
+
 
   
 

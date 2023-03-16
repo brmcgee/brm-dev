@@ -339,6 +339,78 @@ async function renderBlogs(active) {
         let container = document.querySelector('.blog-cards');
         container.innerHTML = html;
         return
+    } 
+    else if (active === 'table') {
+
+    if (document.getElementById("passW").value === 'rem') { 
+
+      let table = document.querySelector(".table");
+      let blogTable = document.getElementById("tableBody");
+
+      if (blogTable !== null) {
+        // let rows = document.querySelectorAll("td");
+        // rows.forEach(i => {
+        //   blogTable.removeChild(i)
+        // })
+        table.removeChild(blogTable);
+        console.log('remove table dude')
+      }
+    
+      let tableHtml = `
+      
+      <div class="container-xl" >
+        <table class='table table-bordered table-striped'>
+         <tbody id="tableBody">
+          <tr>
+            <td>purpose</td>
+            <td>category</td>
+            <td>date</td>
+            <td>author</td>
+       <!--     <td>avatar</td>  -->
+            <td>title</td>
+            <td>body</td>
+       <!--     <td>img1</td> -->
+       <!--    <td>img2</td> -->
+            <td>project</td>
+          </tr>
+      `;
+          blogs.forEach(i => {
+
+            tableHtml += `
+        <tr>
+          <td>${i.purpose}</td>
+          <td>${i.category}</td>
+          <td>${i.date}</td>
+          <td>${i.author}</td>
+      <!--    <td>${i.avatar}</td>  -->
+          <td>${i.title}</td>
+          <td>${i.body}</td>
+      <!--   <td>${i.img1}</td>  -->
+      <!--   <td>${i.img2}</td>  -->
+          <td>${i.project}</td>
+        </tr>  `;
+      });
+      
+      tableHtml += ` 
+            </tbody>
+            </table>
+            </div>
+            `;
+ 
+      let tableContainer = document.querySelector('#contentTable');
+      tableContainer.innerHTML = tableHtml;
+      return;   
+    } else {
+      window.alert("oops.. need admin access");
+    }  
+
+  
+
+
+
+
+
+
     }
     else {
         blogs.forEach((blog) => {
@@ -346,7 +418,7 @@ async function renderBlogs(active) {
           if (singleCount++ === index) {
             
             let segment = `
-            <div class="mt-2 blog-wide col-xl-12 col-md-12 col-sm-12 mx-auto d-block pt-5">
+            <div class="mt-2 blog-wide col-xl-12 col-md-12 col-sm-12 mx-auto d-block">
             <div class="card mx-auto d-block" id="blogCard">
                 <div class="card-img img-fluid">
                     <img src="${blogs[index].img2}" class="img-fluid">
