@@ -355,13 +355,16 @@ async function renderBlogs(active) {
         // })
         table.removeChild(blogTable);
         console.log('remove table dude')
+
       }
-    
-      let tableHtml = `
+      let tableHtml = `<h2 class="text-center">Database for ${url}</h2>`;
+
+      tableHtml += `
       
-      <div class="container-xl" >
-        <table class='table table-bordered table-striped'>
-         <tbody id="tableBody">
+      <div class="container-xxl" >
+        <table class='table table-bordered border-warning table-striped table-dark'>
+
+         <thead>
           <tr>
             <td>id</td>
             <td>isHero</td>
@@ -377,11 +380,14 @@ async function renderBlogs(active) {
             <td>img2</td>
             <td>link</td>
           </tr>
+          </thead>
+
+          <tbody id="tableBody">
       `;
           blogs.forEach(i => {
 
             tableHtml += `
-        <tr>
+        <tr class="table-light table-bordered border-dark">
           <td>${i.id}</td>
           <td>${i.isHero}</td>
           <td>${i.purpose}</td>
@@ -392,9 +398,9 @@ async function renderBlogs(active) {
           <td>${i.project}</td>
           <td>${i.title}</td>
           <td>${i.body}</td>
-          <td><img src="${i.img1}" style="width:90px;height:90px"></td>
-          <td><img src="${i.img2}" style="width:90px;height:90px"></td>
-          <td><a href="#blogs"><button onclick="renderBlogs(${i.id})">View</button></a></td>
+          <td><img src="${i.img1}" style="width:110px;height:110px"></td>
+          <td><img src="${i.img2}" style="width:110px;height:110px"></td>
+          <td class="align-bottom"><a href="#blogs"><button class="btn-main" onclick="renderBlogs(${i.id})">View</button></a></td>
         </tr>  `;
       });
       
@@ -419,7 +425,7 @@ async function renderBlogs(active) {
 
 
     }
-    // selector next/prev
+    // selector next/prev number i view
     else {
         blogs.forEach((blog) => {
           let index = Number(active);
@@ -511,7 +517,7 @@ function fetchTitles(blogs){
   let titles = document.getElementById("titleData");
   let blogOption = document.createElement("option");
    
-  blogOption.innerHTML = 'All';
+  blogOption.innerHTML = 'all';
   blogOption.value = "all";
   blogOption.className = "title-option";
   titles.appendChild(blogOption);
@@ -554,7 +560,7 @@ function fetchCategory(blogs){
   let category = document.getElementById("catData");
   let catOption = document.createElement("option");
 
-  // build array without duplicate author 
+  // build array without duplicate category 
   blogs.forEach((blog, i) => {
     // console.log(all.indexOf('all'))
     if (all.indexOf(blog.category) < 0) {
