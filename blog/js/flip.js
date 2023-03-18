@@ -361,7 +361,7 @@ async function renderBlogs(active) {
 
       tableHtml += `
       
-      <div class="container-xxl" >
+      <div class="container-fluid" >
         <table class='table table-bordered border-warning table-striped table-dark'>
 
          <thead>
