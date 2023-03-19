@@ -71,7 +71,7 @@
     
     "title" : "Low maintenance vinyl siding, gutters fasica and soffit",
     
-    "body" : "What an awesome transformation on this house. We installed new vinyl siding, soffit and fascia, window wraps and more. This is a 2-story company house so its tall. We handle steep and tall - so give us a call.",
+    "body" : " What an awesome transformation on this house. We installed new vinyl siding, soffit and fascia, window wraps and more. This is a 2-story company house so its tall. We handle steep and tall - so give us a call. ",
     
     "img1" : "https://www.brmcontractors.net/assets/gallery/pollin-siding2.jpg",
     
@@ -98,7 +98,7 @@
     
     "title" : "Total transformation! Install vinyl siding, fascia, trim and gutters.",
     
-    "body" : "What an awesome trasnformation on this one. We've installed new windows and wrap already and have finished all the exterior siding. This is a 2-story company house and is tall. We can handle all your home repair needs.",
+    "body" : " What an awesome transformation on this one. We have installed new windows and wrap already and have finished all the exterior siding. This is a 2-story company house and is tall. We can handle all your home repair needs. ",
     
     "img1" : "https://www.brmcontractors.net/assets/gallery/pollin-back.jpg",
     
@@ -1189,33 +1189,6 @@
     
     
     {
-    "id" : 105,
-    
-    "isHero" : false,
-    
-    "purpose" : "roast",
-    
-    "category" : "Roofing",
-    
-    "date" : "May 14, 2023",
-    
-    "author" : "105",
-    
-    "avatar" : "https://www.brmcontractors.net/blog/assets/gallery/heather.jpg",
-    
-    "title" : "Please read BEWARE!!",
-    
-    "body" : "Awesome dude of the hour the b dizzo mcgee",
-    
-    "img1" : "https://www.brmcontractors.net/assets/gallery/bathroom-demo3.jpg",
-    
-    "img2" : "https://www.brmcontractors.net/assets/gallery/house-before.jpg",
-    
-    "project" : "this"
-    },
-    
-    
-    {
     "id" : 150,
     
     "isHero" : false,
@@ -1232,11 +1205,11 @@
     
     "title" : "Image test upload",
     
-    "body" : "Awesome dude of the hour the b dizzo mcgee",
+    "body" : " Awesome dude of the hour the b dizzo mcgee ",
     
     "img1" : "https://www.brmcontractors.net/assets/gallery/deck-rv-2.jpg",
     
-    "img2" : "brm-3.jpg",
+    "img2" : "https://www.brmcontractors.net/assets/logo/brm-red.ico",
     
     "project" : "img"
     },
@@ -1259,11 +1232,11 @@
     
     "title" : "duck",
     
-    "body" : "duck",
+    "body" : " duck ",
     
     "img1" : "https://www.brmcontractors.net/assets/gallery/bathroom-demo3.jpg",
     
-    "img2" : "brm.jpg",
+    "img2" : "https://www.brmcontractors.net/blog/assets/gallery/brian.jpg",
     
     "project" : "duck"
     }
