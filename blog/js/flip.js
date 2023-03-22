@@ -1,4 +1,5 @@
 
+
 async function getBlogs() {
     try {
         let res = await fetch(url);
@@ -37,6 +38,7 @@ async function renderBlogs(active) {
       fetchProject(blogs);
     }
 
+ 
 
     // } else {
     //   options.forEach(i => {
