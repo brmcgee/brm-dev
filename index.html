@@ -1,174 +1,449 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRM Blog</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
 
-<link rel="canonical" href="https://www.brmcontractors.net/" />
-<link rel="icon" href="https://www.brmcontractors.net/assets/logo/brm-ico-red.png"/>
+<title>Brian McGee</title>
+<link rel="icon" href="assets/logo/bm.ico" sizes="32x32" />
 
 <!-- Latest compiled and minified CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<!-- <link rel="stylesheet" href="https://brmdev.com/blog/css/cards.css"> -->
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
 
 <!-- Google fonts -->
 <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-<!-- Google fonts -->
-<link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 <!-- font awesome -->
 <script src="https://kit.fontawesome.com/8ab1cf7876.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://kit.fontawesome.com/8ab1cf7876.css" crossorigin="anonymous"> 
 
+<!-- local style sheet by brm  -->
+<link rel="stylesheet" href="css/style.css" type="text/css">
 
-<link rel="stylesheet" href="css/cards.css">
+<!-- <link rel="stylesheet" href="css/grids.css" type="text/css"> page specific -->
+
 
 
 </head>
 <body>
-  <!-- initial load  -->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        renderUrl();
-        renderUrl("all")
-    })
-</script>
 
-<script type="text/javascript">
+<!-- ============ BANNER ============= -->
 
-</script>
+  <!-- ============ TOPBAR ============== -->
+  <div class="banner"  style="background-color: #333;height: 100vh;">
 
-<!-- buttons  -->
-  <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-3  mx-auto d-block p-1">
-        <div class="btn-group ms-3">
-            <button class="btn btn-danger btn-main" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Menu</button>
-            <button id="btnPrev" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Prev">Prev</button>
-            <input type="text" id="passW" style="width: 80px;">
-            <button id="btnNext" class="btn btn-danger btn-main" data-bs-dismiss="offcanvas" aria-label="Next">Next</button>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Raleway:wght@400;500;600;700;800&display=swap');
+   *{
+     margin:0;
+     padding:0;
+     font-family:'Raleway', serif;
+   }
+   h2{
+     font-family:'Open Sans Condensed', sans-serif;
+     font-size:4rem;
+   }
+   #container{
+     height:100vh;
+     width:100vw;
+     background-color:#a1a1a1;
+     display:flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     align-items:center;
+     justify-content:center;
+   }
+   .card{
+     margin:0 30px;
+     height:500px;
+     width:250px;
+     background-color:#fff;
+     border:5px solid black;
+     box-shadow:0 0 0 7px #fff,0 0  8px 5px #000;
+   }
+   .card-image{
+     position:relative;
+     width:100%;
+     border-bottom:5px solid #000;
+     z-index:1;
+   }
+   .card-image>img{
+     position:absolute;
+     z-index:2;
+     height:100%;
+   }
+   #hulk>.card-image{
+     height:55%;
+     background-color:#FFDD33;
+   }
+   #hulk>.card-image>img{
+     width:150%;
+     height:100%;
+     left:50%;
+     transform:translateX(-50%);
+   }
+   
+   #hulk h2{
+     color:#59C887;
+     letter-spacing:-5px; 
+     line-height: 50px;
+     text-align:center;
+     margin-top:10px;
+   }
+   #hulk p{
+     font-size:2rem;
+     line-height:30px;
+     font-weight:500;
+     text-align:center;
+   }
+   #hulk>.card-text{
+     height:45%;
+     display:flex;
+     flex-direction:column;
+     justify-content:space-between;
+   }
+   .card-text>div{
+     display:flex;
+     justify-content:space-between;
+   }
+   #hulk>.card-text>div>div:first-child{
+     display:flex;
+     align-items:center;
+     padding:0 20px;
+   }
+   #hulk>.card-text>div>div:first-child>span:first-child{
+    font-size:4rem;
+     font-weight:800;
+   }
+   #hulk>.card-text>div>div:first-child>span:last-child{
+     font-size:2rem;
+     font-weight:600;
+   }
+   #hulk>.card-text>div>div:last-child{
+     display:flex;
+     flex-direction:column;
+     justify-content:center;
+     align-items:center;
+     border:5px solid black;
+     border-right:none;
+     border-bottom:none;
+     padding:10px 20px;
+   }
+   #hulk>.card-text>div>div:last-child>span:first-child{
+     font-size:2rem;
+     font-weight:bold;
+   }
+   #hulk>.card-text>div>div:last-child>span:last-child{
+     font-weight:500;
+   }
+   #spiderman>.card-image{
+     height:72%;
+     background-color:#5CAAB4;
+   }
+   #spiderman>.card-image>img{
+     width:130%;
+     height:90%;
+     margin-top:20px;
+     margin-left:-30px;
+   }
+   #spiderman h2{
+     font-size:2.6rem;
+     letter-spacing:14px;
+     text-align:center;
+     margin-left:10px;
+     color:#2E5579;
+   }
+   #spiderman>.card-text>div{
+     display:flex;
+     justify-content:space-between;
+     padding:10px;
+     padding-top:5px;
+   }
+   #spiderman>.card-text>div>div:first-child{
+     display:flex;
+     flex-direction:column;
+   }
+   #spiderman>.card-text>div>div:first-child>span{
+     font-size:1.5rem;
+     line-height:30px;
+     font-weight:500;
+   }
+   #spiderman>.card-text>div>div:last-child{
+     display:flex;
+   }
+   #spiderman>.card-text>div>div:last-child>span:first-child{
+     font-size:5rem;
+     font-weight:800;
+       line-height:60px;
+   }
+   
+   #spiderman>.card-text>div>div:last-child>span:last-child{
+     font-weight:600;
+     font-size:1.3rem;
+   }
+   #deadpool>.card-image{
+     height:calc(80% - 5px);
+     background-color:#A01F29;
+     border-top:5px solid black;
+     display:flex;
+     justify-content:center;
+     align-items:center;
+   
+   }
+   #deadpool img{
+     height:90%;
+   }
+   #deadpool>.card-text{
+     display:flex;
+     justify-content:center;
+     height:20%;
+   }
+   #deadpool>.card-text>div{
+     width:100%;
+   }
+   #deadpool>.card-text>div:last-child{
+     border-left:3px solid black;
+   }
+   #deadpool>.card-text>div:first-child{
+     display:flex;
+     justify-content:center;
+     align-items:center;
+   }
+   #deadpool>.card-text>div:first-child>span:first-child{
+     font-size:4rem;
+     font-weight:800;
+   }
+   #deadpool>.card-text>div:first-child>span:last-child{
+     font-size:1.5rem;
+     font-weight:600;
+   }
+   #deadpool>.card-text>div:last-child{
+     display:flex;
+     flex-direction:column;
+     justify-content:center;
+     align-items:center;
+   }
+   #deadpool>.card-text>div:last-child>span:first-child{
+     font-size: 3rem;
+      font-weight: 600;
+       margin-bottom:3px;
+   }
+   #deadpool>.card-text>div:last-child>span:nth-of-type(2){
+     font-size:1.3rem;
+     font-weight:500;
+   }
+   #deadpool>.card-text>div:last-child>span:last-child{
+     font-size:1.2rem;
+     margin-bottom:10px;
+   }
+   #deadpool>.card-image p{
+     position:absolute;
+     top:10px;
+     left:10px;
+     z-index:3;
+     font-weight:600;
+     color:#fff;
+   }
+   </style>
+   
+   <div id="container">
+       <div class="card" id="hulk">
+         <div class="card-image">
+           <img src="https://www.brmdev.com/blog/assets/brian1.png"/>
+         </div>
+         <div class="card-text">
+           <h2>BRIAN</h2>
+           <p>MCGEE<br>FAMILY</p>
+           <div>
+           <div>
+             <span>15</span>
+             <span>&cent;</span>
+     
+             </div>
+           <div><span>27</span><span>May</span></div>
+         </div>
+           </div>
+       </div>
+       <div class="card" id="spiderman">
+         <div class="card-image">
+           <img src="https://www.brmdev.com/blog/assets/russ3.png"/>
+         </div>
+         <div class="card-text">
+           <h2>RUSSELL</h2>
+     
+           <div>
+           <div>
+             <span>MCGEE</span>
+             <span>FAMILY</span>
+     
+             </div>
+           <div><span>12</span><span>&cent;</span></div>
+         </div>
+           </div>
+       </div>
+       <div class="card" id="deadpool">
+         <div class="card-text">
+           <div><span>40</span><span>&cent;</span></div>
+           <div>
+             <span><h5 style="font-size: 22px;color:#A01F29">HEATHER</h5></span>
+             <span>JAN</span>
+             <span>02-1999</span>
+           </div>
+         </div>
+         <div class="card-image">
+           <p>&copy; 1979 McGee <br>Family</p>
+           <img src="https://www.brmdev.com/blog/assets/heather.png"/>
+         </div>
+       </div>
+     </div>
 
 
-        </div>
-    </div>
-    <div class="col-lg-5 mx-auto d-flex p-1">
-      <div class="btn-group ms-3">
-        <!-- <button id="btnReg" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('reg')">Reg</button> -->
-        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('fade')">Fade</button>
-        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('dark')">Dark</button> 
-        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('overlay')">Overlay</button>
-        <button id="btnRes" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('standard')">Standard</button>
-        <a id="btnRes" href="#contentTable" class="btn btn-danger btn-main" onclick="renderUrl(), renderBlogs('table')">Table</a>        
-      </div>
-    </div>
-          
-  </div>
-
-
-<!-- sidenav  -->
-  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">BRM Blog Data Welcome</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-
-        <div class="wrapper">
-          <a class="btn-main btn btn-dark text-decoration-none mb-2"href="https://www.brmcontractors.net">BRM Contractors</a>
-
-            <div class="blog-head">
-            </div>
-            <div class="blog-controls">
-
-              <!-- data json selection  -->
-              <div class="url-source">
-                <label for="urlData">Data JSON</label>
-                <select id="urlData" name="urlData">
-                  <option value="https://www.brmcontractors.net/assets/data/brm.json">BRM</option>
-                  <option value="https://brmdev.com/blog/random-data.json">ET</option>
-                  <option value="https://brmdev.com/blog/js/master_data/brian.json">McGee</option>
-                  <option value="https://brmdev.com/blog/js/master_data/dummy-data.json">Planes</option>
-                </select>
-               </div>
-               <br>
-
-               <div class="title-source">
-                <label for="titleData">Title:</label>
-                <select id="titleData" name="authorData">
-                  <!-- <option value="all">All</option> -->
-                </select>
-              </div>  
-              <br>
-
-               <div class="category-source">
-                 <label for="catData">Category:</label>
-                 <select id="catData" name="catData">
-                   <!-- <option value="all">All</option> -->
-                 </select>
-               </div>
-               <br>
-               
-               <div class="project-source">
-                <label for="projectData">Project:</label>
-                <select id="projectData" name="projectData">
-                  <!-- <option value="all">All</option> -->
-                </select>
-              </div>
-              <br>
-
-               <div class="author-source">
-                 <label for="authorData">Author:</label>
-                 <select id="authorData" name="authorData">
-                   <!-- <option value="all">All</option> -->
-                 </select>
-               </div>
-               <br>
-
-           
-            </div>
-           
-            <div class="button-group">
-              <button role="button" id="renderUrl" onclick="renderUrl()" class="btn-main btn-black" data-bs-dismiss="offcanvas" aria-label="Close">Submit</button>    
-            </div>
-        </div>
-        <ul>
-          <li><a href="https://www.brmnow.com/myblog/index.php">Live</a></li>
-        </ul>
-      </div>
-  </div>
-
-
-
-  </div>
-
-  <!-- table insert  -->
-  <div class="container-fluid" id="contentTable"></div>
-
-  <!-- js insertion  -->
-  <div class="row"> 
-    <div id="blogs" class="blog-cards row flip-container"></div>
-  </div>
-
-
-
+      
   
 
-  <script src="js/flip.js"></script>
+
+  </div>
+  
+  <!-- ========= TOPBAR END/============= -->
+<!-- =========== BANNER END/ ========== -->
+
+<!-- ============ NAV-BAR ============= -->
+<div class="nav-bar col-12" id="navBar">
+   <!-- =========  NAVBAR ==========  -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-main">
+    <a class="navbar-brand" href="#">
+      <i class="fa-solid fa-house h2 pt-2 ps-2"></i>
+    </a>
+    <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="menu-icon" onclick="iconSwap(this)">
+        <div class="menu-icon">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </span>
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#about.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            About Me
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#top">About</a>
+            <a class="dropdown-item" href="http://www.brmcontractors.net">BRM Contractors</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://www.brmcontractors.net">Home remodel</a>
+            <a class="dropdown-item" href="#top">Call 724-787-3758</a>
+            <a class="dropdown-item" href="#top">Web Design</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <button type="button" class="btn btn-solid" data-toggle="modal" data-target="#exampleModalCenter">Connect</button>
+            </a>
+          </div>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" id="lastNav" href="https://www.brmdev.com/blog/index.html">BRM Blog</a>
+        </li>
+    </div>
+  </nav>
+  <!-- =========  NAVBAR/END =========  -->
+</div> 
+<!-- =========== NAV-BAR END/========== -->
+
+
+<!-- ============ WRAPPER ============= -->
+<div class="wrapper"  style="height: 100vh;">
+
+    
+
+    <div class="col-sm-12 col-lg-8 mx-auto d-block" style="margin:10% auto 50% auto;">
+        <div class="cards card-cover h-100 overflow-hidden text-white bg-dark shadow-l" style="background: linear-gradient(rgba(19, 16, 34, 0.58) 0%, rgba(19, 16, 34, 0.78) 100%) 0% 0% / cover, url(assets/logo/--bg-blue-elec.jpg) center center no-repeat;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="lc-block pt-5 mt-5 mb-4">
+              <h2 class="display-6 lh-1 fw-bold text-white">Welcome</h2>
+              <p class="text-light">Hi my name is Brian McGee, I am home repair contractor in Western PA with over 25 years in the field. I provide home remodeling, inspection and consulting services. When I am not working I enjoy spending time with my family and coding on the computer.</p>
+            </div>
+            <ul class="d-flex list-unstyled mt-auto ms-auto">
+              <a class="btn btn-link btn-sm text-white" href="http://www.brmcontractors.net" role="button">BRM Contractors</a>
+              <img src="assets/logo/bm.ico" class="float-start ms-5" style="height: 90px;border-radius: 50px;">
+            </ul>
+          </div>
+        </div>
+      </div>
+          
+
+</div>
+<!-- ========== WRAPPER END/=========== -->
+
+
+<!-- ============ FOOTER ============== -->
+<footer id="footer" class="footer">
+  <div class="footer-content position-relative">
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-info">
+            <h3>Brian McGee</h3>
+            <p>
+              PO Box 66 <br>
+              Hannastown, PA 15635<br><br>
+              <span><i class="fa-solid fa-phone" style="color:#c8be06;"></i></i></span> <strong>Phone:</strong> 724-787-3758<br>
+              <span><i class="fa-light fa-at" style="color:#c8be06;font-size:20px;"></i></span><strong>Email:</strong> brianrmcgee@gmail.com<br>
+            </p>
+            <div class="social-links d-flex mt-3">
+              <a href="http://www.brmdev.com" class="d-flex align-items-center justify-content-center"><img src="assets/logo/bm.ico" alt="BRM"></img></a>
+              <a href="http://www.brmcontractors.net" class="d-flex align-items-center justify-content-center"><img src="assets/logo/brm.jpg" alt="BRM"></img></a>
+              <a href="mailto:brianrmcgee@gmail.com" class="d-flex align-items-center justify-content-center"><img src="assets/logo/bm.ico" alt="BRM"></img></a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Sitemap</h4>
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#top">About</a></li>
+            <li><a href="#top">Services</a></li>
+            <li><a href="#top">Connect with Me</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+</footer>
+<!-- =========== FOOTER END/=========== -->
+
+
+
+
+
+
+<script src="js/main.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>
-
-
-
 
