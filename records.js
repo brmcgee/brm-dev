@@ -1,6 +1,6 @@
-const getEl = function (str) {
-    let el = document.querySelector(str);
-    return el;
+const el = function (str) {
+    let e = document.querySelector(str);
+    return e;
 }
 
 
