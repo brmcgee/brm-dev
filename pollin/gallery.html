@@ -162,32 +162,7 @@ img.hover-shadow {
 
 
 
-  <div class="row">
-
-    <div class="col">
-     <img src="images/pollin-img4.JPEG" onclick="openLightbox();toSlide(1)" class="hover-shadow preview">
-    </div>
-
-    <div class="col">
-     <img src="images/pollin-img-profile.jpg" onclick="openLightbox();toSlide(2)" class="hover-shadow preview">
-    </div>
-
-    <div class="col">
-     <img src="images/pollin-img10.JPEG" onclick="openLightbox();toSlide(3)" class="hover-shadow preview">
-    </div>
-
-    <div class="col">
-      <img src="images/pollin-img3.JPEG" onclick="openLightbox();toSlide(1)" class="hover-shadow preview">
-     </div>
- 
-     <div class="col">
-      <img src="images/pollin-img-bg.JPEG" onclick="openLightbox();toSlide(2)" class="hover-shadow preview">
-     </div>
- 
-     <div class="col">
-      <img src="images/pollin-img-front1.jpg" onclick="openLightbox();toSlide(3)" class="hover-shadow preview">
-     </div>
-
+  <div id="rowPreview" class="row">
   </div>
    
 
@@ -197,67 +172,8 @@ img.hover-shadow {
    
     <span class="close pointer" onclick="closeLightbox()">&times;</span>
 
-    <div class="modal-content">
+    <div id="modalContent" class="modal-content"></div>
 
-     <div class="slide">
-      <img src="images/pollin-img4.JPEG" class="image-slide" alt="Toy car on the road." />
-     </div>
-
-     <div class="slide">
-      <img src="images/pollin-img-profile.jpg" class="image-slide" alt="Toy car exploring offroad." />
-     </div>
-
-     <div class="slide">
-      <img src="images/pollin-img10.JPEG" class="image-slide" alt="Toy car in the city." />
-     </div>
-
-     <div class="slide">
-      <img src="images/pollin-img3.JPEG" class="image-slide" alt="Toy car on the road." />
-     </div>
-
-     <div class="slide">
-      <img src="images/pollin-img-bg.JPEG" class="image-slide" alt="Toy car exploring offroad." />
-     </div>
-
-     <div class="slide">
-      <img src="images/pollin-img-front1.jpg" class="image-slide" alt="Toy car in the city." />
-     </div>
-   
-     <a class="previous" onclick="changeSlide(-1)">&#10094;</a>
-     <a class="next" onclick="changeSlide(1)">&#10095;</a>
-   
-
-
-
-     <div class="dots">
-
-      <div class="col">
-       <img src="images/pollin-img4.JPEG" class="modal-preview hover-shadow" onclick="toSlide(1)" alt="Toy Car Touring City">
-      </div>
-
-      <div class="col">
-       <img src="images/pollin-img-profile.jpg" class="modal-preview hover-shadow" onclick="toSlide(2)" alt="Toy Car Touring City">
-      </div>
-
-      <div class="col">
-       <img src="images/pollin-img10.JPEG" class="modal-preview hover-shadow" onclick="toSlide(3)" alt="Toy Car Touring City">
-      </div>
-
-      <div class="col">
-        <img src="images/pollin-img3.JPEG" class="modal-preview hover-shadow" onclick="toSlide(1)" alt="Toy Car Touring City">
-       </div>
- 
-       <div class="col">
-        <img src="images/pollin-img-bg.JPEG" class="modal-preview hover-shadow" onclick="toSlide(2)" alt="Toy Car Touring City">
-       </div>
- 
-       <div class="col">
-        <img src="images/pollin-img-front1.jpg" class="modal-preview hover-shadow" onclick="toSlide(3)" alt="Toy Car Touring City">
-       </div>
-
-     </div>
-
-    </div>
    </div>
 
 
@@ -269,14 +185,9 @@ img.hover-shadow {
     
 
 
-
+<script src="gallery-app.js"></script>
 
    <script>
-
-
-
-
-
 
 var slideIndex = 1;
 showSlide(slideIndex);
@@ -326,6 +237,58 @@ function showSlide(n) {
 
 
    </script>
+<!-- 
+   <script>
+    const imagesPollin = [
+
+"images/pollin-img4.JPEG",
+"images/pollin-img-profile.jpg",
+"images/pollin-img10.JPEG",
+"images/pollin-img3.JPEG",
+"images/pollin-img-bg.JPEG",
+"images/pollin-img-front1.jpg",
+"images/pollin-img-front2.jpg",
+"images/pollin-img-front3.jpg",
+"images/pollin-img-front4.jpg",
+"images/pollin-img1.JPEG",
+"images/pollin-img5.JPEG",
+"images/pollin-img6.JPEG",
+"images/pollin-img7.JPEG",
+"images/pollin-img8.JPEG",
+"images/pollin-img9.JPEG",
+"images/pollin-img-r1.jpg",
+"images/pollin-img-r2.jpg",
+"images/pollin-img-r3.jpg",
+"images/pollin-img12.JPEG",
+"images/pollin-img13.JPEG",
+"images/pollin-img16.JPEG",
+"images/pollin-img-l2.jpg",
+"images/pollin-img-l3.jpg",
+"images/pollin-img17.JPEG",
+"images/pollin-img18.JPEG",
+"images/pollin-img19.JPEG",
+"images/pollin-img20.JPEG",
+"images/pollin-img21.JPEG",
+"images/pollin-img-back1.jpg",
+"images/pollin-img-back.jpg",
+"images/pollin-img34.jpg",
+"images/pollin-img22.JPEG",
+"images/pollin-img23.JPEG",
+"images/pollin-img24.JPEG",
+"images/pollin-img25.JPEG",
+"images/pollin-img26.JPEG",
+"images/pollin-img27.JPEG",
+"images/pollin-img28.JPEG",
+"images/pollin-img29.JPEG",
+"images/pollin-img30.JPEG",
+"images/pollin-img31.JPEG",
+"images/pollin-img32.JPEG",
+"images/pollin-img33.JPEG",
+"images/pollin-map.jpg",
+"images/pollin-map2.jpg"
+
+];
+   </script> -->
 
 </body>
 </html>
