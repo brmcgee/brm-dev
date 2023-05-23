@@ -73,7 +73,7 @@ imagesPollin.forEach((img, index) => {
     let html2 = 
     `
     <div class="col">
-      <img src="https://www.brmdev.com/pollin/${img}" class="modal-preview hover-shadow" onclick="toSlide(${index-1})" alt="${index}">
+      <img src="${img}" class="modal-preview hover-shadow" onclick="toSlide(${index-1})" alt="${index}">
     </div>
     `;
 
