@@ -1,449 +1,836 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="format-detection" content="telephone=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-<title>Brian McGee</title>
-<link rel="icon" href="assets/logo/bm.ico" sizes="32x32" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-<!-- Latest compiled and minified CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
 
-<!-- Google fonts -->
-<link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 
-<!-- font awesome -->
-<script src="https://kit.fontawesome.com/8ab1cf7876.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://kit.fontawesome.com/8ab1cf7876.css" crossorigin="anonymous"> 
-
-<!-- local style sheet by brm  -->
-<link rel="stylesheet" href="css/style.css" type="text/css">
-
-<!-- <link rel="stylesheet" href="css/grids.css" type="text/css"> page specific -->
-
-
-
-</head>
-<body>
-
-<!-- ============ BANNER ============= -->
-
-  <!-- ============ TOPBAR ============== -->
-  <div class="banner"  style="background-color: #333;height: 100vh;">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Raleway:wght@400;500;600;700;800&display=swap');
-   *{
-     margin:0;
-     padding:0;
-     font-family:'Raleway', serif;
-   }
-   h2{
-     font-family:'Open Sans Condensed', sans-serif;
-     font-size:4rem;
-   }
-   #container{
-     height:100vh;
-     width:100vw;
-     background-color:#a1a1a1;
-     display:flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     align-items:center;
-     justify-content:center;
-   }
-   .card{
-     margin:0 30px;
-     height:500px;
-     width:250px;
-     background-color:#fff;
-     border:5px solid black;
-     box-shadow:0 0 0 7px #fff,0 0  8px 5px #000;
-   }
-   .card-image{
-     position:relative;
-     width:100%;
-     border-bottom:5px solid #000;
-     z-index:1;
-   }
-   .card-image>img{
-     position:absolute;
-     z-index:2;
-     height:100%;
-   }
-   #hulk>.card-image{
-     height:55%;
-     background-color:#FFDD33;
-   }
-   #hulk>.card-image>img{
-     width:150%;
-     height:100%;
-     left:50%;
-     transform:translateX(-50%);
-   }
-   
-   #hulk h2{
-     color:#59C887;
-     letter-spacing:-5px; 
-     line-height: 50px;
-     text-align:center;
-     margin-top:10px;
-   }
-   #hulk p{
-     font-size:2rem;
-     line-height:30px;
-     font-weight:500;
-     text-align:center;
-   }
-   #hulk>.card-text{
-     height:45%;
-     display:flex;
-     flex-direction:column;
-     justify-content:space-between;
-   }
-   .card-text>div{
-     display:flex;
-     justify-content:space-between;
-   }
-   #hulk>.card-text>div>div:first-child{
-     display:flex;
-     align-items:center;
-     padding:0 20px;
-   }
-   #hulk>.card-text>div>div:first-child>span:first-child{
-    font-size:4rem;
-     font-weight:800;
-   }
-   #hulk>.card-text>div>div:first-child>span:last-child{
-     font-size:2rem;
-     font-weight:600;
-   }
-   #hulk>.card-text>div>div:last-child{
-     display:flex;
-     flex-direction:column;
-     justify-content:center;
-     align-items:center;
-     border:5px solid black;
-     border-right:none;
-     border-bottom:none;
-     padding:10px 20px;
-   }
-   #hulk>.card-text>div>div:last-child>span:first-child{
-     font-size:2rem;
-     font-weight:bold;
-   }
-   #hulk>.card-text>div>div:last-child>span:last-child{
-     font-weight:500;
-   }
-   #spiderman>.card-image{
-     height:72%;
-     background-color:#5CAAB4;
-   }
-   #spiderman>.card-image>img{
-     width:130%;
-     height:90%;
-     margin-top:20px;
-     margin-left:-30px;
-   }
-   #spiderman h2{
-     font-size:2.6rem;
-     letter-spacing:14px;
-     text-align:center;
-     margin-left:10px;
-     color:#2E5579;
-   }
-   #spiderman>.card-text>div{
-     display:flex;
-     justify-content:space-between;
-     padding:10px;
-     padding-top:5px;
-   }
-   #spiderman>.card-text>div>div:first-child{
-     display:flex;
-     flex-direction:column;
-   }
-   #spiderman>.card-text>div>div:first-child>span{
-     font-size:1.5rem;
-     line-height:30px;
-     font-weight:500;
-   }
-   #spiderman>.card-text>div>div:last-child{
-     display:flex;
-   }
-   #spiderman>.card-text>div>div:last-child>span:first-child{
-     font-size:5rem;
-     font-weight:800;
-       line-height:60px;
-   }
-   
-   #spiderman>.card-text>div>div:last-child>span:last-child{
-     font-weight:600;
-     font-size:1.3rem;
-   }
-   #deadpool>.card-image{
-     height:calc(80% - 5px);
-     background-color:#A01F29;
-     border-top:5px solid black;
-     display:flex;
-     justify-content:center;
-     align-items:center;
-   
-   }
-   #deadpool img{
-     height:90%;
-   }
-   #deadpool>.card-text{
-     display:flex;
-     justify-content:center;
-     height:20%;
-   }
-   #deadpool>.card-text>div{
-     width:100%;
-   }
-   #deadpool>.card-text>div:last-child{
-     border-left:3px solid black;
-   }
-   #deadpool>.card-text>div:first-child{
-     display:flex;
-     justify-content:center;
-     align-items:center;
-   }
-   #deadpool>.card-text>div:first-child>span:first-child{
-     font-size:4rem;
-     font-weight:800;
-   }
-   #deadpool>.card-text>div:first-child>span:last-child{
-     font-size:1.5rem;
-     font-weight:600;
-   }
-   #deadpool>.card-text>div:last-child{
-     display:flex;
-     flex-direction:column;
-     justify-content:center;
-     align-items:center;
-   }
-   #deadpool>.card-text>div:last-child>span:first-child{
-     font-size: 3rem;
-      font-weight: 600;
-       margin-bottom:3px;
-   }
-   #deadpool>.card-text>div:last-child>span:nth-of-type(2){
-     font-size:1.3rem;
-     font-weight:500;
-   }
-   #deadpool>.card-text>div:last-child>span:last-child{
-     font-size:1.2rem;
-     margin-bottom:10px;
-   }
-   #deadpool>.card-image p{
-     position:absolute;
-     top:10px;
-     left:10px;
-     z-index:3;
-     font-weight:600;
-     color:#fff;
-   }
-   </style>
-   
-   <div id="container">
-       <div class="card" id="hulk">
-         <div class="card-image">
-           <img src="https://www.brmdev.com/blog/assets/brian1.png"/>
-         </div>
-         <div class="card-text">
-           <h2>BRIAN</h2>
-           <p>MCGEE<br>FAMILY</p>
-           <div>
-           <div>
-             <span>15</span>
-             <span>&cent;</span>
-     
-             </div>
-           <div><span>27</span><span>May</span></div>
-         </div>
-           </div>
-       </div>
-       <div class="card" id="spiderman">
-         <div class="card-image">
-           <img src="https://www.brmdev.com/blog/assets/russ3.png"/>
-         </div>
-         <div class="card-text">
-           <h2>RUSSELL</h2>
-     
-           <div>
-           <div>
-             <span>MCGEE</span>
-             <span>FAMILY</span>
-     
-             </div>
-           <div><span>12</span><span>&cent;</span></div>
-         </div>
-           </div>
-       </div>
-       <div class="card" id="deadpool">
-         <div class="card-text">
-           <div><span>40</span><span>&cent;</span></div>
-           <div>
-             <span><h5 style="font-size: 22px;color:#A01F29">HEATHER</h5></span>
-             <span>JAN</span>
-             <span>02-1999</span>
-           </div>
-         </div>
-         <div class="card-image">
-           <p>&copy; 1979 McGee <br>Family</p>
-           <img src="https://www.brmdev.com/blog/assets/heather.png"/>
-         </div>
-       </div>
-     </div>
 
 
-      
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+
+:root {
+    --brand: #aa1a1a;
+    --dark: #333;
+    --body: #516171;
+    --border: rgba(0,0,0,0.08);
+    --shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+    
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--body);
+    line-height: 1.7;
+}
+
+h1,h2,h3,h4,h5,h6,
+.display-1,.display-2,.display-3,.display-4 {
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color: var(--dark);
+    transition: all 0.4s ease;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--brand);
+}
+
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.text-brand {
+    color: var(--brand) !important;
+}
+
+
+
+
+/* navbar */
+.top-nav {
+    background-color: var(--brand);
+    color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.top-nav p {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.top-nav span,
+.top-nav i {
+    vertical-align: middle;
+}
+
+.navbar {
+    box-shadow: var(--shadow);
+}
+
+.social-icons a {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+.social-icons a:hover {
+    background-color: #fff;
+    color: var(--brand);
+}
+.conditions-section{
+    margin: 20px 0;
+}
+.conditions-section a{
+   color: #fff;
+   margin: 0 10px;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: var(--dark);
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--brand);
+}
+
+.navbar .navbar-nav .nav-link.active {
+    color: var(--brand);
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.navbar-brand .dot {
+    color: var(--brand);
+}
+
+.btn {
+    padding: 4px 26px;
+}
+
+.btn-brand {
+    border-color: var(--brand);
+    background-color: var(--brand);
+    color: #fff;
+}
+
+.btn-brand:hover {
+    background-color: rgb(141, 21, 21);
+    border-color: #d64022;
+    color: #fff;
+}
+
+.intro {margin-bottom: 36px;
+text-align: center;}
+
+.intro p {
+    max-width: 500px;
+}
+.intro h6{
+    color: var(--brand);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.intro h1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.info-box {
+    align-items: center;
+    display: flex;
+}
+
+.info-box img {
+    width: 90px;
+}
+
+
+#milestone {
+    background: linear-gradient(rgba(145, 17, 17, 0.85), rgba(170, 35, 35, 0.85)), url(https://www.brmcontractors.net/assets/gallery/pollin-siding3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#milestone h1,
+#milestone p {
+    color: #fff;
+}
+
+.service {
+    padding: 32px;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+}
+
+.service h5 {
+    margin-top: 24px;
+    margin-bottom: 14px;
+}
+
+.service img {
+    width: 90px;
+    height: 90px;
+}
+
+
+.project {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.project h6 {
+    font-weight: 400;
+}
+
+.project h6::before {
+    content: "";
+    height: 2px;
+    width: 30px;
+    display: inline-block;
+    background: var(--brand);
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+.project .overlay {
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(199, 41, 9, 0) 0%, var(--dark) 100%);
+}
+
+.project .content {
+    position: absolute;
+    left: 10%;
+    bottom: 10%
+}
+
+.project h2,
+.project h6 {
+    color: #fff;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member .image{
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.team-member .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: -10%;
+    background-color: rgba(107, 60, 54, 0.7);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.team-member h5 {
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+
+.team-member .social-icons {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.team-member .social-icons a {
+    width: 40px;
+    height: 40px;
+}
+
+.team-member:hover .social-icons {
+    top: 50%;
+    opacity: 1;
+}
+
+.team-member:hover .overlay {
+    top: 0%;
+    opacity: 1;
+}
+
+
+.blog-post {
+    position: relative;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+}
+
+.blog-post .content {
+    padding: 32px;
+}
+
+.blog-post a {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--brand);
+    padding: 2px 12px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.blog-post h5 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.blog-post small {
+    text-transform: uppercase;
+    color: var(--brand);
+    text-decoration: underline;
+}
+
+footer {
+    background: linear-gradient(0deg, rgba(50, 18, 8, 0.9), rgba(50, 16, 8, 0.9)), url(https://www.brmcontractors.net/assets/gallery/deck-repair1.jpg), #082032;;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer .footer-top {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+footer .navbar-brand {
+    color: #fff;
+}
+
+footer p {
+    color: #ADB3B9;
+}
+
+footer .social-icons a {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.loader {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    z-index: 99999;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+
+input.form-control {
+    border-color: transparent;
+    height: 44px;
+}
+
+.form-control {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.04);;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--brand);
+}
+
+
+.features-icons {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+  .features-icons .features-icons-item {
+    max-width: 20rem;
+  }
+  .features-icons .features-icons-item .features-icons-icon {
+    height: 7rem;
+  }
+  .features-icons .features-icons-item .features-icons-icon i {
+    font-size: 4.5rem;
+  }
+  
+  header.masthead {
+    position: relative;
+    background-color: #343a40;
+    background: url("https://www.brmcontractors.net/assets/gallery/pollin-deck2.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  header.masthead:before {
+    content: "";
+    position: absolute;
+    background-color: #1c375e;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+  }
+  header.masthead h1, header.masthead .h1 {
+    font-size: 2rem;
+  }
+  @media (min-width: 768px) {
+    header.masthead {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
+    header.masthead h1, header.masthead .h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  .showcase .showcase-text {
+    padding: 3rem;
+  }
+  .showcase .showcase-img {
+    min-height: 30rem;
+    background-size: cover;
+  }
+  @media (min-width: 768px) {
+    .showcase .showcase-text {
+      padding: 7rem;
+    }
+  }
+  
+  .testimonials {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+  .testimonials .testimonial-item {
+    max-width: 18rem;
+  }
+  .testimonials .testimonial-item img {
+    max-width: 12rem;
+    box-shadow: 0px 5px 5px 0px #adb5bd;
+  }
+  
+  .call-to-action {
+    position: relative;
+    background-color: #343a40;
+    background: url("https://www.brmcontractors.net/assets/gallery/pollin-deck2.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+  .call-to-action:before {
+    content: "";
+    position: absolute;
+    background-color: #1c375e;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+  }
+  
+  footer.footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #343a40;
+    background: url("https://www.brmcontractors.net/assets/gallery/pollin-deck2.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  
   
 
+    </style>
 
-  </div>
-  
-  <!-- ========= TOPBAR END/============= -->
-<!-- =========== BANNER END/ ========== -->
+    <title>BRM Contractors | Home</title>
 
-<!-- ============ NAV-BAR ============= -->
-<div class="nav-bar col-12" id="navBar">
-   <!-- =========  NAVBAR ==========  -->
-   <nav class="navbar navbar-expand-lg navbar-light bg-main">
-    <a class="navbar-brand" href="#">
-      <i class="fa-solid fa-house h2 pt-2 ps-2"></i>
-    </a>
-    <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="menu-icon" onclick="iconSwap(this)">
-        <div class="menu-icon">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
+    <script src="https://www.brmcontractors.net/js/brmData.js" type="text/javascript"></script>
+
+</head>
+
+
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+
+    <!-- TOP NAV -->
+    <div class="top-nav bg-dark" id="home">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <p> <i class='bx bxs-envelope'></i> brianrmcgee@gmail.com</p>
+                    <p> <i class='bx bxs-phone-call'></i> 724 787 3758</p>
+                </div>
+                <div class="col-auto social-icons  d-none d-md-block">
+                    <a href="https://www.facebook.com/people/BRM-Contractors-Inc/100054525456256/"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" style="display: none;"><i class='bx bxl-twitter'></i></a>
+                    <a href="#" style="display: none;"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
         </div>
-      </span>
-    </a>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#about.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            About Me
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#top">About</a>
-            <a class="dropdown-item" href="http://www.brmcontractors.net">BRM Contractors</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Services
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="http://www.brmcontractors.net">Home remodel</a>
-            <a class="dropdown-item" href="#top">Call 724-787-3758</a>
-            <a class="dropdown-item" href="#top">Web Design</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <button type="button" class="btn btn-solid" data-toggle="modal" data-target="#exampleModalCenter">Connect</button>
-            </a>
-          </div>
-        </li>
-                <li class="nav-item">
-          <a class="nav-link" id="lastNav" href="https://www.brmdev.com/blog/index.html">BRM Blog</a>
-        </li>
     </div>
-  </nav>
-  <!-- =========  NAVBAR/END =========  -->
-</div> 
-<!-- =========== NAV-BAR END/========== -->
+
+    <!-- BOTTOM NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">BRM Contractors<span class="dot">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.brmnow.com">Blog</a>
+                    </li>
+                </ul>
+
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                class="btn btn-brand ms-lg-3">Blogs</a>
+                
+
+            </div>
+        </div>
+    </nav>
 
 
-<!-- ============ WRAPPER ============= -->
-<div class="wrapper"  style="height: 100vh;">
+
+
+
+    <!-- Masthead-->
+    <header class="masthead" style='background: url("https://www.brmcontractors.net/uploads/gdoor-IMG-0057.jpg") no-repeat center center; background-size: cover;'>
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="brm" style="opacity:.5;border-radius: 5px;width:325px;">
+                            <h1 class="mb-5 text-light">Total service home remodel and repair contractor, BRM</h1>
+                            <div class="col-auto"><button class="btn btn-brand ms-lg-3">Submit</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+
+
+    <section id="services" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro">
+                        <h6>Our Services</h6>
+                        <h1>What We Do?</h1>
+                        <p class="mx-auto">Welcome to BRM Contractors Inc. We are a family owned and operated contracting business located in the Western Pennsylvania. We specialize in all aspects of residential and commercial construction services. Our team of experienced professionals is dedicated to delivering superior results to all of our projects. We take pride in our work and strive to exceed expectations. At BRM Contractors Inc, we understand that a construction project can be daunting and requires knowledge, skill and attention to detail. We use the latest technology, tools and resources to get the job done right the first time. We are experienced in all areas of construction, from foundation and framing to siding and roofing. We also offer services such as remodeling, additions and custom carpentry. If you need any type of residential or commercial building service, look no further than BRM Contractors Inc. We are here to help make your dreams come to life, so give us a call today to get started.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="https://www.brmcontractors.net/assets/logo/brm.jpg" alt="">
+                        <h5>Building</h5>
+                        <p>BRM offers full replacement options for most household items. We install fencing, and decks. From repairs to major renovations and home remodeling we can handle all your homes needs</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="">
+                        <h5>Repairs</h5>
+                        <p>BRM offers full replacement options for most household items. We install fencing, and decks. From repairs to major renovations and home remodeling we can handle all your homes needs.m</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="https://www.brmcontractors.net/assets/logo/brm.ico" alt="">
+                        <h5>Maintenance</h5>
+                        <p>Changing seasons bringing on a new list of maintenance items. We handle tasks like gutter cleaning, clean up and debris removal. Often simply maintenance can extend the service life.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro">
+                        <h6>Blog</h6>
+                        <h1>Blog Posts</h1>
+                        <p class="mx-auto">Welcome to BRM Contractors blog post of recently completed projects. Follow along as we make repairs and document the process. Who knows, you might need the same work completed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="blogPost">
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function makePost () {
+            let html = `
+            <div class="col-md-4">
+                    <article class="blog-post">
+                        <img src="${data[52].img1}" alt="">
+                        <a href="#" class="tag">${data[52].category}</a>
+                        <div class="content">
+                            <small>${data[52].date}</small>
+                            <h5>${data[52].title}</h5>
+                            <p>${data[52].body}</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="blog-post">
+                        <img src="${data[43].img1}" alt="">
+                        <a href="#" class="tag">${data[43].category}</a>
+                        <div class="content">
+                            <small>${data[43].date}</small>
+                            <h5>${data[43].title}</h5>
+                            <p>${data[43].body}</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="blog-post">
+                        <img src="${data[2].img1}" alt="">
+                        <a href="#" class="tag">${data[2].category}</a>
+                        <div class="content">
+                            <small>${data[2].date}</small>
+                            <h5>${data[2].title}</h5>
+                            <p>${data[2].body}</p>
+                        </div>
+                    </article>
+                </div>
+            `;
+            let blogEl = document.getElementById('blogPost');
+            blogEl.innerHTML += html;
+
+        }
+        
+        document.addEventListener("DOMContentLoaded", makePost)
+    
+    </script>
+<section class="container-lg rounded mx-auto d-block mt-2 shadow-lg" style="background-color: lightgray;border-radius:50px;width:95%;">
+    <div class="row flex-lg-row align-items-center g-2">
+      <!-- overlay  -->
+      <!-- <div id="blogs" class="blog-cards2 col-sm-12 col-md-10 col-lg-6 mx-auto d-block mb-5" style="height: 385px;"></div> -->
+  
+      <img src="assets/logo/brm-3.jpg" alt="" class="img-rounded mx-auto d-block col-sm-11 col-md-4 col-lg-5" style="width:350px;">
+  
+      <div class="col-sm-11 col-md-6 col-lg-5  px-2 m-1 mx-auto d-block">
+        <img src="https://www.brmcontractors.net/assets/logo/redbrm.jpg" alt="BRM" class="mt-5 mx-auto d-block w-50 border border-warning" style="border-radius:20px;">
+        <h3 class="mt-3 m-3 text-russo px-1">#1 Choice total home and business repair and remodel services.  Providing total home maintenance and repair needs.</h3>
+        
+        <p class="lead mt-3 ps-3 text-roboto">BRM offers professional residential and commercial home repair services. Whether you have a small project like patching a hole in your drywall, or a long maintenance list of repairs needed we are here to get the job done right. We offer all kinds of services from piecework to complete projects - give us a call today BRM is at your service!</p>
+      </div>
+    </div>
+  </section>
+
+
+<footer>
+    <div class="footer-top text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h4 class="navbar-brand">BRM Contractors<span class="dot">.</span></h4>
+                    <div class="col-auto social-icons">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-pinterest'></i></a>
+                    </div>
+                    <div class="col-auto conditions-section">
+                        <a href="#">privacy</a>
+                        <a href="#">terms</a>
+                        <a href="#">disclaimer</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body p-0 pb-5 mb-5" >
+                    <div class="container-fluid">
+                        <div class="row gy-4">
+                            <div class="col-lg-12">        
+
+                                <div class="row" style="margin:3px auto;height:25%;">
+
+                                    <div class="col-12">
+                                      <div class="container-fluid">
+                                        <h3 class="bg-light">BRMBlog-App</h3>
+                                          <div class="container">
+                                            <label for="view-style">Choose a Style:</label>
+                                              <select name="view-style" id="viewStyleSelect">
+                                                <option value="small">Small view</option>
+                                                <option value="big">Big view</option>
+                                                <option value="overlay">Overlay</option>
+                                                <option value="block">Block</option>
+                                              </select>
+                                           </div>
+                                      </div>
+                                    </div>
+                              
+                                  </div>
+                              
+                                   
+                                    <div class="col-12">
+                                        
+                                        <div class="container p-2">
+                                          <label for="title">Choose a Title:</label>
+                                            <select name="title" id="selectTitle" class="menu-select-key-el">
+                                                <!-- js render option  -->
+                                            </select>
+                                        </div>
+                                            
+                                        <div class="container p-2">
+                                            <label for="category">Choose a Category:</label>
+                                            <select name="category" id="selectCategory" class="menu-select-key-el">
+                                                <!-- js render option  -->
+                                            </select>
+                                        </div>
+                                            
+                                        <div class="container p-2">
+                                            <label for="author">Choose a Author:</label>
+                                            <select name="author" id="selectAuthor" class="menu-select-key-el">
+                                                <!-- js render option  -->
+                                            </select>
+                                        </div>
+                                            
+                                        <div class="container p-2">
+                                            <label for="project">Choose a Project:</label>
+                                            <select name="project" id="selectProject" class="menu-select-key-el">
+                                                <!-- js render option  -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                  </div>    
+                                  
+
+
+
+                                <div class="container-lg row" id="displayCard" style="margin:1px auto;height:100%;padding-top:10px;">
+                                    <!-- js render blog post  -->
+                                  </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- local java script  -->
+    <script src="https://www.brmcontractors.net/blog/js/view-app.js" type="text/javascript"></script>
+    <script src="https://www.brmcontractors.net/blog/js/main.js" type="text/javascript"></script>
+
+
+
+    <!-- Latest compiled and minified JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     
-
-    <div class="col-sm-12 col-lg-8 mx-auto d-block" style="margin:10% auto 50% auto;">
-        <div class="cards card-cover h-100 overflow-hidden text-white bg-dark shadow-l" style="background: linear-gradient(rgba(19, 16, 34, 0.58) 0%, rgba(19, 16, 34, 0.78) 100%) 0% 0% / cover, url(assets/logo/--bg-blue-elec.jpg) center center no-repeat;">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <div class="lc-block pt-5 mt-5 mb-4">
-              <h2 class="display-6 lh-1 fw-bold text-white">Welcome</h2>
-              <p class="text-light">Hi my name is Brian McGee, I am home repair contractor in Western PA with over 25 years in the field. I provide home remodeling, inspection and consulting services. When I am not working I enjoy spending time with my family and coding on the computer.</p>
-            </div>
-            <ul class="d-flex list-unstyled mt-auto ms-auto">
-              <a class="btn btn-link btn-sm text-white" href="http://www.brmcontractors.net" role="button">BRM Contractors</a>
-              <img src="assets/logo/bm.ico" class="float-start ms-5" style="height: 90px;border-radius: 50px;">
-            </ul>
-          </div>
-        </div>
-      </div>
-          
-
-</div>
-<!-- ========== WRAPPER END/=========== -->
-
-
-<!-- ============ FOOTER ============== -->
-<footer id="footer" class="footer">
-  <div class="footer-content position-relative">
-    <div class="container">
-      <div class="row">
-  
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-info">
-            <h3>Brian McGee</h3>
-            <p>
-              PO Box 66 <br>
-              Hannastown, PA 15635<br><br>
-              <span><i class="fa-solid fa-phone" style="color:#c8be06;"></i></i></span> <strong>Phone:</strong> 724-787-3758<br>
-              <span><i class="fa-light fa-at" style="color:#c8be06;font-size:20px;"></i></span><strong>Email:</strong> brianrmcgee@gmail.com<br>
-            </p>
-            <div class="social-links d-flex mt-3">
-              <a href="http://www.brmdev.com" class="d-flex align-items-center justify-content-center"><img src="assets/logo/bm.ico" alt="BRM"></img></a>
-              <a href="http://www.brmcontractors.net" class="d-flex align-items-center justify-content-center"><img src="assets/logo/brm.jpg" alt="BRM"></img></a>
-              <a href="mailto:brianrmcgee@gmail.com" class="d-flex align-items-center justify-content-center"><img src="assets/logo/bm.ico" alt="BRM"></img></a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Sitemap</h4>
-          <ul>
-            <li><a href="#top">Home</a></li>
-            <li><a href="#top">About</a></li>
-            <li><a href="#top">Services</a></li>
-            <li><a href="#top">Connect with Me</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  
-</footer>
-<!-- =========== FOOTER END/=========== -->
-
-
-
-
-
-
-<script src="js/main.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-</html>
 
+</html>
