@@ -194,18 +194,6 @@ text-align: center;}
 }
 
 
-#milestone {
-    background: linear-gradient(rgba(145, 17, 17, 0.85), rgba(170, 35, 35, 0.85)), url(https://www.brmcontractors.net/assets/gallery/pollin-siding3.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#milestone h1,
-#milestone p {
-    color: #fff;
-}
-
 .service {
     padding: 32px;
     background-color: #fff;
@@ -220,99 +208,6 @@ text-align: center;}
 .service img {
     width: 90px;
     height: 90px;
-}
-
-
-.project {
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.project h6 {
-    font-weight: 400;
-}
-
-.project h6::before {
-    content: "";
-    height: 2px;
-    width: 30px;
-    display: inline-block;
-    background: var(--brand);
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-
-.project .overlay {
-    width: 100%;
-    height: 220px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(180deg, rgba(199, 41, 9, 0) 0%, var(--dark) 100%);
-}
-
-.project .content {
-    position: absolute;
-    left: 10%;
-    bottom: 10%
-}
-
-.project h2,
-.project h6 {
-    color: #fff;
-}
-
-.team-member {
-    text-align: center;
-}
-
-.team-member .image{
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-}
-
-.team-member .overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: -10%;
-    background-color: rgba(107, 60, 54, 0.7);
-    opacity: 0;
-    transition: all 0.4s ease;
-}
-
-.team-member h5 {
-    margin-top: 16px;
-    margin-bottom: 4px;
-}
-
-.team-member .social-icons {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    opacity: 0;
-    transition: all 0.4s ease;
-}
-
-.team-member .social-icons a {
-    width: 40px;
-    height: 40px;
-}
-
-.team-member:hover .social-icons {
-    top: 50%;
-    opacity: 1;
-}
-
-.team-member:hover .overlay {
-    top: 0%;
-    opacity: 1;
 }
 
 
@@ -469,36 +364,7 @@ input.form-control {
     }
   }
   
-  .testimonials {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-  }
-  .testimonials .testimonial-item {
-    max-width: 18rem;
-  }
-  .testimonials .testimonial-item img {
-    max-width: 12rem;
-    box-shadow: 0px 5px 5px 0px #adb5bd;
-  }
-  
-  .call-to-action {
-    position: relative;
-    background-color: #343a40;
-    background: url("https://www.brmcontractors.net/assets/gallery/pollin-deck2.jpg") no-repeat center center;
-    background-size: cover;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-  }
-  .call-to-action:before {
-    content: "";
-    position: absolute;
-    background-color: #1c375e;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
-  }
+
   
   footer.footer {
     padding-top: 4rem;
@@ -584,7 +450,7 @@ input.form-control {
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="brm" style="opacity:.5;border-radius: 5px;width:325px;">
+                            <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="brm" style="opacity:.5;border-radius: 5px;width:285px;">
                             <h1 class="mb-5 text-light">Total service home remodel and repair contractor, BRM</h1>
                             <div class="col-auto"><button class="btn btn-brand ms-lg-3">Submit</button></div>
                         </div>
@@ -594,6 +460,7 @@ input.form-control {
     </header>
 
 
+    <!-- Services -->
     <section id="services" class="text-center">
         <div class="container">
             <div class="row">
@@ -608,21 +475,21 @@ input.form-control {
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="service">
-                        <img src="https://www.brmcontractors.net/assets/logo/brm.jpg" alt="">
+                        <img src="https://www.brmcontractors.net/assets/logo/builder.jpg" alt="">
                         <h5>Building</h5>
                         <p>BRM offers full replacement options for most household items. We install fencing, and decks. From repairs to major renovations and home remodeling we can handle all your homes needs</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service">
-                        <img src="https://www.brmcontractors.net/assets/logo/brm-red.ico" alt="">
+                        <img src="https://www.brmcontractors.net/assets/logo/repairs.jfif" alt="">
                         <h5>Repairs</h5>
                         <p>BRM offers full replacement options for most household items. We install fencing, and decks. From repairs to major renovations and home remodeling we can handle all your homes needs.m</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service">
-                        <img src="https://www.brmcontractors.net/assets/logo/brm.ico" alt="">
+                        <img src="https://www.brmcontractors.net/assets/logo/maintenance.jpg" alt="">
                         <h5>Maintenance</h5>
                         <p>Changing seasons bringing on a new list of maintenance items. We handle tasks like gutter cleaning, clean up and debris removal. Often simply maintenance can extend the service life.</p>
                     </div>
@@ -632,6 +499,24 @@ input.form-control {
         </div>
     </section>
 
+    <section class="container-lg rounded mx-auto d-block mt-2 shadow-lg" style="background-color: rgb(228, 225, 225);border-radius:50px;width:95%;">
+   
+        <div class="row flex-lg-row align-items-center g-2">
+          
+          <img src="https://www.brmcontractors.net/assets/logo/brm-3.jpg" alt="" class="img-rounded mx-auto d-block col-sm-11 col-md-4 col-lg-5" style="width:350px;">
+      
+          <div class="col-sm-11 col-md-6 col-lg-5  px-2 m-1 mx-auto d-block">
+            <img src="https://www.brmcontractors.net/assets/logo/redbrm.jpg" alt="BRM" class="mt-5 mx-auto d-block w-50 border border-warning" style="border-radius:20px;">
+            <h3 class="mt-3 m-3 text-russo px-1">#1 Choice total home and business repair and remodel services.  Providing total home maintenance and repair needs.</h3>
+            <p class="lead mt-3 ps-3 text-roboto">BRM offers professional residential and commercial home repair services. Whether you have a small project like patching a hole in your drywall, or a long maintenance list of repairs needed we are here to get the job done right. We offer all kinds of services from piecework to complete projects - give us a call today BRM is at your service!</p>
+          </div>
+    
+        </div>
+    
+      </section>
+
+      
+    <!-- blog -->
     <section id="blog">
         <div class="container">
             <div class="row">
@@ -694,21 +579,8 @@ input.form-control {
         document.addEventListener("DOMContentLoaded", makePost)
     
     </script>
-<section class="container-lg rounded mx-auto d-block mt-2 shadow-lg" style="background-color: lightgray;border-radius:50px;width:95%;">
-    <div class="row flex-lg-row align-items-center g-2">
-      <!-- overlay  -->
-      <!-- <div id="blogs" class="blog-cards2 col-sm-12 col-md-10 col-lg-6 mx-auto d-block mb-5" style="height: 385px;"></div> -->
-  
-      <img src="assets/logo/brm-3.jpg" alt="" class="img-rounded mx-auto d-block col-sm-11 col-md-4 col-lg-5" style="width:350px;">
-  
-      <div class="col-sm-11 col-md-6 col-lg-5  px-2 m-1 mx-auto d-block">
-        <img src="https://www.brmcontractors.net/assets/logo/redbrm.jpg" alt="BRM" class="mt-5 mx-auto d-block w-50 border border-warning" style="border-radius:20px;">
-        <h3 class="mt-3 m-3 text-russo px-1">#1 Choice total home and business repair and remodel services.  Providing total home maintenance and repair needs.</h3>
-        
-        <p class="lead mt-3 ps-3 text-roboto">BRM offers professional residential and commercial home repair services. Whether you have a small project like patching a hole in your drywall, or a long maintenance list of repairs needed we are here to get the job done right. We offer all kinds of services from piecework to complete projects - give us a call today BRM is at your service!</p>
-      </div>
-    </div>
-  </section>
+
+
 
 
 <footer>
